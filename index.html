@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VNFS — Velocity NOVA Formula Series</title>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
@@ -17,16 +17,9 @@
   --blue:#3B5FE8;--green:#22c55e;--yellow:#f59e0b;
   --text:#ffffff;--text2:rgba(255,255,255,0.6);--text3:rgba(255,255,255,0.35);
   --sidebar:56px;
-  --font-display:'Archivo','Manrope',sans-serif;
-  --font-body:'Manrope','Archivo',sans-serif;
 }
 html{scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:14px;overflow-x:hidden;display:flex;}
-
-/* Display font — used for big headlines, hero titles and standout numbers */
-.hero-h1,.vhero-title,.page-title,.sc-name,.astat-num,.hs-num,.vc-num,.vhero-stat-num,
-.vhero-card-race,.tpf-driver-name,.tpf-driver-pts,.tpf-driver-num,.tp-stat-val,.tp-num,
-.rh-pos,.sb-logo,.dpv-name,.dpv-stat-val,.dpv-standing-pos{font-family:var(--font-display);}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:14px;overflow-x:hidden;display:flex;}
 
 /* SIDEBAR */
 #sidebar{position:fixed;left:0;top:0;bottom:0;width:var(--sidebar);background:var(--bg2);border-right:1px solid var(--border);display:flex;flex-direction:column;align-items:center;padding:16px 0;gap:4px;z-index:300;}
@@ -44,7 +37,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-si
 .tb-title{font-weight:800;font-size:16px;color:var(--text);letter-spacing:-.01em;}
 .tb-sub{font-size:11px;color:var(--text3);font-weight:500;letter-spacing:.04em;text-transform:uppercase;}
 .tb-spacer{flex:1;}
-.tb-btn{height:32px;padding:0 14px;border-radius:7px;border:1px solid var(--border2);background:transparent;color:var(--text2);font-size:12px;font-weight:600;cursor:pointer;transition:all .15s;font-family:var(--font-body);}
+.tb-btn{height:32px;padding:0 14px;border-radius:7px;border:1px solid var(--border2);background:transparent;color:var(--text2);font-size:12px;font-weight:600;cursor:pointer;transition:all .15s;font-family:'Inter',sans-serif;}
 .tb-btn:hover{background:var(--surface);color:var(--text);}
 .tb-btn-red{background:var(--vnfs-grad);color:#fff;border-color:transparent;}
 .tb-btn-red:hover{opacity:.88;}
@@ -60,9 +53,9 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-si
 .hero-h1 span{background:var(--vnfs-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .hero-desc{font-size:13px;color:var(--text2);line-height:1.7;max-width:480px;}
 .hero-actions{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap;}
-.btn-primary{height:36px;padding:0 20px;background:var(--vnfs-grad);color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;font-family:var(--font-body);transition:opacity .15s;}
+.btn-primary{height:36px;padding:0 20px;background:var(--vnfs-grad);color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;transition:opacity .15s;}
 .btn-primary:hover{opacity:.87;}
-.btn-secondary{height:36px;padding:0 20px;background:transparent;color:var(--text2);border:1px solid var(--border2);border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;font-family:var(--font-body);transition:all .15s;}
+.btn-secondary{height:36px;padding:0 20px;background:transparent;color:var(--text2);border:1px solid var(--border2);border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:all .15s;}
 .btn-secondary:hover{background:var(--surface);color:#fff;}
 .hs-box{background:var(--surface);border:1px solid var(--border);padding:14px 20px;flex:1;max-width:130px;}
 .hs-num{font-size:1.6rem;font-weight:900;color:#fff;line-height:1;letter-spacing:-.02em;}
@@ -82,12 +75,12 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-si
 .vhero-tag{font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#000;background:var(--vnfs-grad);padding:5px 10px;border-radius:3px;}
 .vhero-live{display:flex;align-items:center;gap:6px;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);}
 .vhero-live i{width:6px;height:6px;border-radius:50%;background:#22c55e;display:inline-block;animation:vheroCountPulse 1.4s ease infinite;}
-.vhero-title{font-family:var(--font-display);font-weight:900;letter-spacing:-.04em;line-height:.86;margin:0 0 18px;position:relative;opacity:0;animation:vheroIn .7s ease forwards .15s;}
+.vhero-title{font-family:'Inter',sans-serif;font-weight:900;letter-spacing:-.04em;line-height:.86;margin:0 0 18px;position:relative;opacity:0;animation:vheroIn .7s ease forwards .15s;}
 .vhero-title .l1{display:block;font-size:clamp(2.6rem,7vw,5.2rem);color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.9);}
 .vhero-title .l2{display:block;font-size:clamp(2.6rem,7vw,5.2rem);background:var(--vnfs-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-top:-.08em;}
 .vhero-desc{font-size:13px;color:var(--text2);line-height:1.7;max-width:420px;margin-bottom:26px;opacity:0;animation:vheroIn .7s ease forwards .28s;}
 .vhero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:48px;opacity:0;animation:vheroIn .7s ease forwards .4s;}
-.vhero-btn{height:42px;padding:0 22px;border-radius:3px;font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;font-family:var(--font-body);display:inline-flex;align-items:center;gap:8px;transition:all .18s;border:none;}
+.vhero-btn{height:42px;padding:0 22px;border-radius:3px;font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;font-family:'Inter',sans-serif;display:inline-flex;align-items:center;gap:8px;transition:all .18s;border:none;}
 .vhero-btn.primary{background:var(--vnfs-grad);color:#fff;}
 .vhero-btn.primary:hover{transform:translateX(3px);}
 .vhero-btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.25);}
@@ -219,7 +212,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-si
 
 /* SERIES DETAIL */
 .series-detail-hero{background:var(--bg2);padding:40px 32px 28px;border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
-.back-btn{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:var(--text3);cursor:pointer;margin-bottom:16px;transition:color .15s;background:none;border:none;font-family:var(--font-body);}
+.back-btn{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:var(--text3);cursor:pointer;margin-bottom:16px;transition:color .15s;background:none;border:none;font-family:'Inter',sans-serif;}
 .back-btn:hover{color:#fff;}
 .sd-badge{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:4px 10px;border-radius:4px;border:1px solid;margin-bottom:12px;}
 .sd-f1{color:var(--red);border-color:rgba(232,24,109,.4);background:rgba(232,24,109,.08);}
@@ -266,7 +259,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-si
 /* CALENDAR */
 .calendar-hero{padding:40px 32px 24px;border-bottom:1px solid var(--border);}
 .cal-filters{display:flex;gap:6px;padding:16px 32px;flex-wrap:wrap;align-items:center;}
-.cf-btn{height:30px;padding:0 14px;border-radius:6px;border:1px solid var(--border);background:transparent;color:var(--text3);font-size:11px;font-weight:600;cursor:pointer;transition:all .15s;font-family:var(--font-body);}
+.cf-btn{height:30px;padding:0 14px;border-radius:6px;border:1px solid var(--border);background:transparent;color:var(--text3);font-size:11px;font-weight:600;cursor:pointer;transition:all .15s;font-family:'Inter',sans-serif;}
 .cf-btn:hover{border-color:var(--border2);color:var(--text2);}
 .cf-btn.active{background:var(--vnfs-grad);border-color:transparent;color:#fff;}
 .race-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;padding:16px 32px 32px;}
@@ -307,7 +300,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-si
 .rd-meta-val{font-size:12px;font-weight:700;color:#fff;}
 /* TABS */
 .rd-tabs{display:flex;gap:0;border-bottom:1px solid var(--border);padding:0 24px;}
-.rd-tab{height:42px;padding:0 18px;border:none;background:transparent;color:var(--text3);font-family:var(--font-body);font-size:12px;font-weight:600;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .15s;}
+.rd-tab{height:42px;padding:0 18px;border:none;background:transparent;color:var(--text3);font-family:'Inter',sans-serif;font-size:12px;font-weight:600;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .15s;}
 .rd-tab:hover{color:var(--text2);}
 .rd-tab.active{color:#fff;border-bottom-color:var(--vnfs-pink);}
 .rd-tab-content{display:none;padding:24px;}
@@ -333,7 +326,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-si
 .ws-day{font-size:11px;font-weight:700;color:var(--text2);min-width:70px;}
 .ws-time{font-size:11px;color:var(--text3);}
 .race-class-tabs{display:flex;gap:4px;padding:16px 32px 0;}
-.rc-tab{height:30px;padding:0 14px;border-radius:6px;border:1px solid var(--border);background:transparent;color:var(--text3);font-size:11px;font-weight:600;cursor:pointer;transition:all .15s;font-family:var(--font-body);}
+.rc-tab{height:30px;padding:0 14px;border-radius:6px;border:1px solid var(--border);background:transparent;color:var(--text3);font-size:11px;font-weight:600;cursor:pointer;transition:all .15s;font-family:'Inter',sans-serif;}
 .rc-tab:hover{border-color:var(--border2);color:var(--text2);}
 .rc-tab.active{background:var(--vnfs-grad);border-color:transparent;color:#fff;}
 /* DOTD VOTING */
@@ -354,15 +347,15 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-si
 .dotd-row-name{font-size:12px;font-weight:700;color:#fff;flex:1;position:relative;}
 .dotd-row-team{font-size:10px;color:var(--text3);position:relative;}
 .dotd-row-count{font-size:11px;font-weight:700;color:var(--text2);min-width:28px;text-align:right;position:relative;flex-shrink:0;}
-.dotd-vote-btn{height:24px;padding:0 10px;border-radius:5px;border:1px solid rgba(245,158,11,.3);background:rgba(245,158,11,.1);color:#f59e0b;font-size:10px;font-weight:700;cursor:pointer;font-family:var(--font-body);transition:all .15s;flex-shrink:0;position:relative;}
+.dotd-vote-btn{height:24px;padding:0 10px;border-radius:5px;border:1px solid rgba(245,158,11,.3);background:rgba(245,158,11,.1);color:#f59e0b;font-size:10px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;transition:all .15s;flex-shrink:0;position:relative;}
 .dotd-vote-btn:hover{background:#f59e0b;color:#000;}
 .dotd-vote-btn.voted{background:rgba(34,197,94,.12);border-color:rgba(34,197,94,.3);color:#22c55e;cursor:default;}
 .dotd-admin-row{display:none;margin-top:10px;padding-top:10px;border-top:1px solid var(--border);gap:6px;align-items:center;}
 body.admin-active .dotd-admin-row{display:flex;}
 .dotd-admin-lbl{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);flex:1;}
-.dotd-set-btn{height:24px;padding:0 10px;border-radius:5px;background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.25);color:#f59e0b;font-size:10px;font-weight:700;cursor:pointer;font-family:var(--font-body);transition:all .15s;}
+.dotd-set-btn{height:24px;padding:0 10px;border-radius:5px;background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.25);color:#f59e0b;font-size:10px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;transition:all .15s;}
 .dotd-set-btn:hover{background:#f59e0b;color:#000;}
-.dotd-reset-btn{height:24px;padding:0 10px;border-radius:5px;background:rgba(232,24,109,.1);border:1px solid rgba(232,24,109,.2);color:var(--red);font-size:10px;font-weight:700;cursor:pointer;font-family:var(--font-body);transition:all .15s;}
+.dotd-reset-btn{height:24px;padding:0 10px;border-radius:5px;background:rgba(232,24,109,.1);border:1px solid rgba(232,24,109,.2);color:var(--red);font-size:10px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;transition:all .15s;}
 .dotd-reset-btn:hover{background:var(--red);color:#fff;}
 
 /* DRIVER ROW DRAG REORDER */
@@ -409,11 +402,11 @@ body.admin-active .dr-drag{display:block;}
 /* STANDINGS */
 .standings-hero{padding:40px 32px 24px;border-bottom:1px solid var(--border);}
 .st-series-tabs{display:flex;gap:4px;padding:16px 32px 0;flex-wrap:wrap;}
-.st-tab{height:32px;padding:0 14px;border-radius:7px;border:1px solid var(--border);background:transparent;color:var(--text3);font-size:11px;font-weight:600;cursor:pointer;transition:all .15s;font-family:var(--font-body);}
+.st-tab{height:32px;padding:0 14px;border-radius:7px;border:1px solid var(--border);background:transparent;color:var(--text3);font-size:11px;font-weight:600;cursor:pointer;transition:all .15s;font-family:'Inter',sans-serif;}
 .st-tab:hover{border-color:var(--border2);color:var(--text2);}
 .st-tab.active{background:var(--vnfs-grad);border-color:transparent;color:#fff;}
 .st-sub-tabs{display:flex;gap:2px;padding:12px 32px 0;}
-.st-sub{height:28px;padding:0 12px;border-radius:5px;border:none;background:transparent;color:var(--text3);font-size:11px;font-weight:600;cursor:pointer;font-family:var(--font-body);transition:all .15s;}
+.st-sub{height:28px;padding:0 12px;border-radius:5px;border:none;background:transparent;color:var(--text3);font-size:11px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:all .15s;}
 .st-sub:hover{color:var(--text2);}
 .st-sub.active{background:var(--surface);color:#fff;}
 .standings-table{padding:16px 32px 32px;}
@@ -496,18 +489,18 @@ body.admin-active .dr-drag{display:block;}
 #adminLoginBox{width:320px;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;color:white;text-align:center;}
 #adminLoginBox h2{font-size:1.1rem;font-weight:800;margin-bottom:6px;}
 #adminLoginBox p{font-size:11px;opacity:.4;margin-bottom:16px;}
-#adminPassword{width:100%;background:var(--bg2);border:1px solid var(--border);color:white;padding:10px 12px;border-radius:8px;margin-bottom:8px;font-family:var(--font-body);font-size:13px;outline:none;}
+#adminPassword{width:100%;background:var(--bg2);border:1px solid var(--border);color:white;padding:10px 12px;border-radius:8px;margin-bottom:8px;font-family:'Inter',sans-serif;font-size:13px;outline:none;}
 #adminPassword:focus{border-color:var(--vnfs-pink);}
-#loginBtn{width:100%;border:none;background:var(--vnfs-grad);color:white;padding:10px;border-radius:8px;font-family:var(--font-body);font-weight:700;font-size:12px;cursor:pointer;}
+#loginBtn{width:100%;border:none;background:var(--vnfs-grad);color:white;padding:10px;border-radius:8px;font-family:'Inter',sans-serif;font-weight:700;font-size:12px;cursor:pointer;}
 #loginBtn:hover{opacity:.88;}
 #editingBanner{position:fixed;top:60px;left:50%;transform:translateX(-50%);background:var(--vnfs-grad);color:white;padding:7px 16px;border-radius:999px;font-weight:700;font-size:11px;z-index:999;display:none;pointer-events:none;}
 #adminSaveBar{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);display:none;gap:8px;z-index:9999;}
 body.admin-active #adminSaveBar{display:flex;}
-.asb-btn{height:36px;padding:0 16px;border-radius:8px;font-family:var(--font-body);font-weight:700;font-size:11px;cursor:pointer;border:none;}
+.asb-btn{height:36px;padding:0 16px;border-radius:8px;font-family:'Inter',sans-serif;font-weight:700;font-size:11px;cursor:pointer;border:none;}
 .asb-save{background:var(--vnfs-grad);color:#fff;border-color:transparent;}
 .asb-save:hover{background:var(--red2);}
 .asb-reset{background:var(--surface);border:1px solid var(--border);color:var(--text2);}
-.admin-add-btn{display:none;align-items:center;gap:6px;background:rgba(232,24,109,.1);border:1px solid rgba(232,24,109,.3);color:var(--red);font-family:var(--font-body);font-weight:700;font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:6px 12px;cursor:pointer;border-radius:6px;transition:all .15s;}
+.admin-add-btn{display:none;align-items:center;gap:6px;background:rgba(232,24,109,.1);border:1px solid rgba(232,24,109,.3);color:var(--red);font-family:'Inter',sans-serif;font-weight:700;font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:6px 12px;cursor:pointer;border-radius:6px;transition:all .15s;}
 .admin-add-btn:hover{background:var(--red);color:#fff;border-color:var(--red);}
 .admin-add-btn::before{content:'+';font-size:13px;font-weight:900;line-height:1;}
 body.admin-active .admin-add-btn{display:inline-flex;}
@@ -519,16 +512,16 @@ body.admin-active .admin-add-btn{display:inline-flex;}
 .vm-close{position:absolute;top:12px;right:12px;width:24px;height:24px;background:var(--bg3);border:none;border-radius:5px;color:var(--text3);cursor:pointer;font-size:13px;display:flex;align-items:center;justify-content:center;}
 .vm-close:hover{background:rgba(232,24,109,.3);color:#fff;}
 .vm-label{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--text3);display:block;margin:10px 0 3px;}
-.vm-input,.vm-select,.vm-textarea{width:100%;background:var(--bg2);border:1px solid var(--border);color:white;padding:9px 11px;border-radius:7px;font-family:var(--font-body);font-size:12px;outline:none;}
+.vm-input,.vm-select,.vm-textarea{width:100%;background:var(--bg2);border:1px solid var(--border);color:white;padding:9px 11px;border-radius:7px;font-family:'Inter',sans-serif;font-size:12px;outline:none;}
 .vm-input:focus,.vm-select:focus{border-color:var(--vnfs-pink);}
 .vm-close:hover{background:rgba(232,24,109,.3);color:#fff;}
-.vm-submit{width:100%;margin-top:18px;height:38px;border:none;border-radius:8px;background:var(--vnfs-grad);color:#fff;font-family:var(--font-body);font-weight:700;font-size:12px;cursor:pointer;transition:opacity .15s;}
+.vm-submit{width:100%;margin-top:18px;height:38px;border:none;border-radius:8px;background:var(--vnfs-grad);color:#fff;font-family:'Inter',sans-serif;font-weight:700;font-size:12px;cursor:pointer;transition:opacity .15s;}
 .vm-submit:hover{opacity:.88;}
 .vm-select option{background:var(--bg2);}
 .vm-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
 /* JOIN LINK ADMIN */
 .join-link-wrap{display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
-.admin-edit-link-btn{display:none;height:32px;padding:0 12px;border-radius:7px;background:rgba(59,95,232,.12);border:1px solid rgba(59,95,232,.3);color:#6699ff;font-family:var(--font-body);font-size:10px;font-weight:700;cursor:pointer;letter-spacing:.06em;transition:all .15s;}
+.admin-edit-link-btn{display:none;height:32px;padding:0 12px;border-radius:7px;background:rgba(59,95,232,.12);border:1px solid rgba(59,95,232,.3);color:#6699ff;font-family:'Inter',sans-serif;font-size:10px;font-weight:700;cursor:pointer;letter-spacing:.06em;transition:all .15s;}
 .admin-edit-link-btn:hover{background:#3B5FE8;color:#fff;border-color:#3B5FE8;}
 body.admin-active .admin-edit-link-btn{display:inline-flex;align-items:center;gap:4px;}
 
@@ -546,21 +539,21 @@ body.admin-active .editable-hint{display:block;}
 #linkEditBox{width:380px;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;color:white;}
 #linkEditBox h3{font-size:1rem;font-weight:800;margin-bottom:6px;}
 #linkEditBox p{font-size:11px;color:var(--text3);margin-bottom:16px;}
-#linkEditInput{width:100%;background:var(--bg2);border:1px solid var(--border);color:white;padding:10px 12px;border-radius:8px;margin-bottom:8px;font-family:var(--font-body);font-size:13px;outline:none;}
+#linkEditInput{width:100%;background:var(--bg2);border:1px solid var(--border);color:white;padding:10px 12px;border-radius:8px;margin-bottom:8px;font-family:'Inter',sans-serif;font-size:13px;outline:none;}
 #linkEditInput:focus{border-color:#3B5FE8;}
-#linkEditBtnLabel{width:100%;background:var(--bg2);border:1px solid var(--border);color:white;padding:10px 12px;border-radius:8px;margin-bottom:12px;font-family:var(--font-body);font-size:13px;outline:none;}
+#linkEditBtnLabel{width:100%;background:var(--bg2);border:1px solid var(--border);color:white;padding:10px 12px;border-radius:8px;margin-bottom:12px;font-family:'Inter',sans-serif;font-size:13px;outline:none;}
 #linkEditBtnLabel:focus{border-color:#3B5FE8;}
 .link-edit-btns{display:flex;gap:8px;}
-#linkSaveBtn{flex:1;padding:10px;border:none;border-radius:7px;background:#3B5FE8;color:white;font-family:var(--font-body);font-weight:700;font-size:11px;cursor:pointer;}
+#linkSaveBtn{flex:1;padding:10px;border:none;border-radius:7px;background:#3B5FE8;color:white;font-family:'Inter',sans-serif;font-weight:700;font-size:11px;cursor:pointer;}
 #linkSaveBtn:hover{background:#2a4bc9;}
-#linkCancelBtn{padding:10px 16px;border:1px solid var(--border);border-radius:7px;background:transparent;color:var(--text2);font-family:var(--font-body);font-weight:600;font-size:11px;cursor:pointer;}
-#linkClearBtn{padding:10px 16px;border:1px solid rgba(232,24,109,.3);border-radius:7px;background:rgba(232,24,109,.08);color:var(--red);font-family:var(--font-body);font-weight:600;font-size:11px;cursor:pointer;}
+#linkCancelBtn{padding:10px 16px;border:1px solid var(--border);border-radius:7px;background:transparent;color:var(--text2);font-family:'Inter',sans-serif;font-weight:600;font-size:11px;cursor:pointer;}
+#linkClearBtn{padding:10px 16px;border:1px solid rgba(232,24,109,.3);border-radius:7px;background:rgba(232,24,109,.08);color:var(--red);font-family:'Inter',sans-serif;font-weight:600;font-size:11px;cursor:pointer;}
 .join-link-indicator{display:none;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:4px;background:rgba(34,197,94,.12);color:#22c55e;margin-left:4px;}
 .join-link-indicator.has-link{display:inline-block;}
 
 /* STANDINGS ROW ADMIN BUTTONS */
 .st-admin-btns{display:flex;gap:4px;margin-left:auto;padding-left:8px;}
-.st-edit-btn,.st-del-btn{height:26px;padding:0 8px;border-radius:5px;border:none;font-size:11px;cursor:pointer;font-family:var(--font-body);font-weight:600;transition:all .15s;}
+.st-edit-btn,.st-del-btn{height:26px;padding:0 8px;border-radius:5px;border:none;font-size:11px;cursor:pointer;font-family:'Inter',sans-serif;font-weight:600;transition:all .15s;}
 .st-edit-btn{background:rgba(59,95,232,.15);color:#6699ff;}
 .st-edit-btn:hover{background:#3B5FE8;color:#fff;}
 .st-del-btn{background:rgba(232,24,109,.12);color:var(--red);}
@@ -582,61 +575,7 @@ body.admin-active .editable-hint{display:block;}
 .dp-form-pill.pts{background:rgba(59,95,232,.15);color:#6699ff;border:1px solid rgba(59,95,232,.3);}
 .dp-form-pill.ret{background:rgba(232,24,109,.15);color:var(--red);border:1px solid rgba(232,24,109,.25);}
 .dp-form-pill.none{background:rgba(255,255,255,.04);color:var(--text3);border:1px solid var(--border);}
-/* ═══ DRIVER FULL PAGE — REDESIGN ═══ */
-.dpv-hero{position:relative;min-height:250px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;background:#000;}
-.dpv-hero-stripes{position:absolute;inset:0;background:repeating-linear-gradient(115deg,rgba(255,255,255,.03) 0 2px,transparent 2px 34px);pointer-events:none;}
-.dpv-hero-glow{position:absolute;top:-130px;right:-90px;width:440px;height:440px;border-radius:50%;filter:blur(70px);opacity:.5;pointer-events:none;}
-.dpv-hero-fade{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(5,5,15,.1) 0%,rgba(5,5,15,.94) 100%);}
-.dpv-hero-inner{position:relative;z-index:1;padding:30px 32px 26px;}
-.dpv-tag{display:inline-flex;align-items:center;gap:6px;font-size:9px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;padding:5px 11px;border-radius:20px;margin-bottom:16px;border:1px solid currentColor;background:rgba(255,255,255,.05);}
-.dpv-identity{display:flex;align-items:center;gap:18px;}
-.dpv-avatar{width:72px;height:72px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:900;color:#fff;flex-shrink:0;border:2.5px solid rgba(255,255,255,.18);box-shadow:0 0 0 4px rgba(255,255,255,.05);font-family:var(--font-display);}
-.dpv-numbadge{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:19px;font-weight:900;color:#fff;flex-shrink:0;letter-spacing:-.02em;font-family:var(--font-display);}
-.dpv-name{font-size:2.15rem;font-weight:900;color:#fff;line-height:1;margin:0 0 8px;letter-spacing:-.02em;}
-.dpv-team-link{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:700;color:var(--text2);cursor:pointer;transition:color .15s;background:none;border:none;padding:0;}
-.dpv-team-link:hover{color:#fff;}
-.dpv-team-link svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2;transition:transform .15s;}
-.dpv-team-link:hover svg{transform:translateX(2px);}
-
-.dpv-grid{padding:24px 32px 52px;display:grid;grid-template-columns:1fr 340px;gap:20px;align-items:start;}
-.dpv-col{display:flex;flex-direction:column;gap:16px;}
-
-.dpv-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
-.dpv-stat{position:relative;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 10px 14px;text-align:center;overflow:hidden;transition:border-color .15s,transform .15s;}
-.dpv-stat:hover{border-color:var(--border2);transform:translateY(-2px);}
-.dpv-stat::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent,var(--red));opacity:.8;}
-.dpv-stat-val{font-size:23px;font-weight:900;color:#fff;line-height:1;}
-.dpv-stat-lbl{font-size:9px;font-weight:700;color:var(--text3);letter-spacing:.12em;text-transform:uppercase;margin-top:6px;}
-
-.dpv-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;}
-.dpv-card-head{display:flex;align-items:center;gap:8px;padding:15px 20px;border-bottom:1px solid var(--border);}
-.dpv-card-head svg{width:13px;height:13px;stroke:var(--text3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
-.dpv-card-label{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);}
-.dpv-card-count{margin-left:auto;font-size:10px;font-weight:800;color:var(--text2);background:rgba(255,255,255,.06);padding:3px 9px;border-radius:20px;}
-
-.dpv-form-pills{display:flex;gap:8px;padding:16px 20px;flex-wrap:wrap;}
-
-.dpv-results{padding:6px 16px 14px;}
-.dpv-results .rh-row:hover{background:rgba(255,255,255,.02);border-radius:8px;}
-
-.dpv-standing{position:relative;border-radius:14px;padding:22px 20px;overflow:hidden;border:1px solid var(--border);background:var(--surface);}
-.dpv-standing-bg{position:absolute;inset:0;opacity:.18;}
-.dpv-standing-label{position:relative;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--text3);margin-bottom:14px;}
-.dpv-standing-row{position:relative;display:flex;align-items:flex-end;justify-content:space-between;}
-.dpv-standing-pos{font-size:46px;font-weight:900;color:#fff;line-height:1;display:flex;align-items:baseline;gap:2px;}
-.dpv-standing-pos sup{font-size:16px;font-weight:800;}
-.dpv-standing-medal{font-size:20px;margin-right:4px;vertical-align:middle;}
-.dpv-standing-gapwrap{text-align:right;position:relative;}
-.dpv-standing-gaplbl{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);margin-bottom:5px;}
-.dpv-standing-gap{font-size:18px;font-weight:800;color:#fff;}
-
-.dpv-info-row{display:flex;align-items:center;gap:10px;padding:12px 20px;border-bottom:1px solid var(--border);}
-.dpv-info-row:last-child{border-bottom:none;}
-.dpv-info-row svg{width:13px;height:13px;stroke:var(--text3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;}
-.dpv-info-lbl{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);flex:1;}
-.dpv-info-val{font-size:12px;font-weight:700;color:#fff;text-align:right;}
-
-.copy-png-btn{display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 14px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid var(--border);color:var(--text2);font-family:var(--font-body);font-size:11px;font-weight:700;cursor:pointer;transition:all .15s;white-space:nowrap;}
+.copy-png-btn{display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 14px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid var(--border);color:var(--text2);font-family:'Inter',sans-serif;font-size:11px;font-weight:700;cursor:pointer;transition:all .15s;white-space:nowrap;}
 .copy-png-btn:hover{background:rgba(255,255,255,.11);border-color:var(--border2);}
 .copy-png-btn.copied{background:rgba(34,197,94,.15);border-color:rgba(34,197,94,.35);color:#22c55e;}
 .standings-copy-bar{display:flex;align-items:center;justify-content:flex-end;padding:8px 24px 0;gap:8px;}
@@ -945,15 +884,6 @@ body.admin-active .editable-hint{display:block;}
   /* ── Driver profile ── */
   .cd-num{font-size:2rem;min-width:56px;padding:8px 6px;}
   .dr-num{font-size:13px;}
-
-  /* ── Driver full page (redesign) ── */
-  .dpv-hero-inner{padding:22px 18px 20px;}
-  .dpv-avatar{width:56px;height:56px;font-size:19px;}
-  .dpv-numbadge{width:46px;height:46px;font-size:15px;}
-  .dpv-name{font-size:1.5rem;}
-  .dpv-grid{grid-template-columns:1fr;padding:18px 18px 36px;gap:14px;}
-  .dpv-stats{grid-template-columns:repeat(2,1fr);}
-  .dpv-standing-pos{font-size:36px;}
 
   /* ── Team page ── */
   #team-page-hero{min-height:160px;}
@@ -1502,94 +1432,83 @@ body.admin-active .editable-hint{display:block;}
 
 <!-- DRIVER FULL PAGE -->
 <div class="page" id="page-driver">
-  <div id="driver-page-hero" class="dpv-hero">
-    <div id="driver-page-hero-bg" class="dpv-hero-glow"></div>
-    <div class="dpv-hero-stripes"></div>
-    <div class="dpv-hero-fade"></div>
-    <div class="dpv-hero-inner">
+  <div id="driver-page-hero" style="position:relative;min-height:220px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;">
+    <div id="driver-page-hero-bg" style="position:absolute;inset:0;"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(5,5,15,.2) 0%,rgba(5,5,15,.88) 100%);"></div>
+    <div style="position:relative;z-index:1;padding:28px 32px 24px;">
       <button class="back-btn" id="driver-page-back" onclick="navigate('series-f1-info')" style="margin-bottom:16px;">← Back</button>
-      <div id="driver-page-series-tag" class="dpv-tag"></div>
-      <div class="dpv-identity">
-        <div id="driver-page-avatar" class="dpv-avatar"></div>
-        <div id="driver-page-numbadge" class="dpv-numbadge"></div>
+      <div id="driver-page-series-tag" style="font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:8px;"></div>
+      <div style="display:flex;align-items:center;gap:16px;">
+        <div id="driver-page-avatar" style="width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:900;color:#fff;flex-shrink:0;border:2px solid rgba(255,255,255,.15);"></div>
+        <div id="driver-page-numbadge" style="width:64px;height:64px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:900;color:#fff;flex-shrink:0;letter-spacing:-.02em;"></div>
         <div>
-          <h1 id="driver-page-name" class="dpv-name"></h1>
-          <button class="dpv-team-link" id="driver-page-team" onclick="dpfOpenTeam()">
-            <span id="driver-page-team-label"></span>
-            <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
-          </button>
+          <h1 id="driver-page-name" style="font-size:2rem;font-weight:900;color:#fff;line-height:1;margin:0 0 6px;"></h1>
+          <div id="driver-page-team" style="font-size:12px;color:var(--text2);cursor:pointer;" onclick="dpfOpenTeam()"></div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="dpv-grid" id="driver-page-grid">
+  <div style="padding:24px 32px;display:grid;grid-template-columns:1fr 340px;gap:20px;align-items:start;" id="driver-page-grid">
 
     <!-- LEFT COLUMN -->
-    <div class="dpv-col">
+    <div style="display:flex;flex-direction:column;gap:16px;">
 
       <!-- Stats row -->
-      <div class="dpv-stats">
-        <div class="dpv-stat" id="dpf-pts-card" style="--accent:#f5a623;">
-          <div id="dpf-pts" class="dpv-stat-val">0</div><div class="dpv-stat-lbl">Points</div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;">
+        <div class="tp-stat" style="background:var(--surface);border:1px solid var(--border);">
+          <div id="dpf-pts" class="tp-stat-val">0</div><div class="tp-stat-lbl">Points</div>
         </div>
-        <div class="dpv-stat" id="dpf-wins-card" style="--accent:#22c55e;">
-          <div id="dpf-wins" class="dpv-stat-val">0</div><div class="dpv-stat-lbl">Wins</div>
+        <div class="tp-stat" style="background:var(--surface);border:1px solid var(--border);">
+          <div id="dpf-wins" class="tp-stat-val">0</div><div class="tp-stat-lbl">Wins</div>
         </div>
-        <div class="dpv-stat" id="dpf-pods-card" style="--accent:#6699ff;">
-          <div id="dpf-pods" class="dpv-stat-val">0</div><div class="dpv-stat-lbl">Podiums</div>
+        <div class="tp-stat" style="background:var(--surface);border:1px solid var(--border);">
+          <div id="dpf-pods" class="tp-stat-val">0</div><div class="tp-stat-lbl">Podiums</div>
         </div>
-        <div class="dpv-stat" id="dpf-dnfs-card" style="--accent:#e8186d;">
-          <div id="dpf-dnfs" class="dpv-stat-val">0</div><div class="dpv-stat-lbl">DNFs</div>
+        <div class="tp-stat" style="background:var(--surface);border:1px solid var(--border);">
+          <div id="dpf-dnfs" class="tp-stat-val">0</div><div class="tp-stat-lbl">DNFs</div>
         </div>
       </div>
 
       <!-- Form strip -->
-      <div id="dpf-form-section" class="dpv-card" style="display:none;">
-        <div class="dpv-card-head">
-          <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          <span class="dpv-card-label">Last 5 Results</span>
-        </div>
-        <div id="dpf-form-pills" class="dpv-form-pills"></div>
+      <div id="dpf-form-section" style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 20px;display:none;">
+        <div style="font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--text3);margin-bottom:10px;">Last 5 Results</div>
+        <div id="dpf-form-pills" style="display:flex;gap:8px;"></div>
       </div>
 
       <!-- Race Results -->
-      <div class="dpv-card" id="dpf-results-block">
-        <div class="dpv-card-head">
-          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-          <span class="dpv-card-label">Race Results This Season</span>
-          <span class="dpv-card-count" id="dpf-results-count"></span>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;" id="dpf-results-block">
+        <div style="padding:16px 20px;border-bottom:1px solid var(--border);">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);">Race Results This Season</div>
         </div>
-        <div id="dpf-results" class="dpv-results"></div>
+        <div id="dpf-results" style="padding:8px 16px 16px;"></div>
       </div>
     </div>
 
     <!-- RIGHT COLUMN -->
-    <div class="dpv-col">
+    <div style="display:flex;flex-direction:column;gap:14px;">
 
       <!-- Championship standing card -->
-      <div id="dpf-standing-card" class="dpv-standing" style="display:none;">
-        <div id="dpf-standing-bg" class="dpv-standing-bg"></div>
-        <div class="dpv-standing-label">Championship Standing</div>
-        <div class="dpv-standing-row">
+      <div id="dpf-standing-card" style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;display:none;">
+        <div style="font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--text3);margin-bottom:12px;">Championship Standing</div>
+        <div style="display:flex;align-items:center;justify-content:space-between;">
           <div>
-            <div class="dpv-standing-pos"><span id="dpf-standing-medal" class="dpv-standing-medal"></span><span id="dpf-standing-pos"></span></div>
-            <div class="dpv-standing-sub">of season</div>
+            <div id="dpf-standing-pos" style="font-size:42px;font-weight:900;color:#fff;line-height:1;"></div>
+            <div style="font-size:11px;color:var(--text3);margin-top:2px;">of season</div>
           </div>
-          <div class="dpv-standing-gapwrap">
-            <div class="dpv-standing-gaplbl">Gap to Leader</div>
-            <div id="dpf-standing-gap" class="dpv-standing-gap">—</div>
+          <div style="text-align:right;">
+            <div style="font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--text3);margin-bottom:4px;">Gap to Leader</div>
+            <div id="dpf-standing-gap" style="font-size:16px;font-weight:800;color:var(--text2);">—</div>
           </div>
         </div>
       </div>
 
       <!-- Driver info card -->
-      <div class="dpv-card">
-        <div class="dpv-card-head">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
-          <span class="dpv-card-label">Driver Info</span>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+        <div style="padding:16px 20px;border-bottom:1px solid var(--border);">
+          <div style="font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--text3);">Driver Info</div>
         </div>
-        <div id="dpf-info-rows"></div>
+        <div id="dpf-info-rows" style="padding:4px 0;"></div>
       </div>
     </div>
   </div>
@@ -1909,8 +1828,8 @@ body.admin-active .editable-hint{display:block;}
 
       <!-- Action buttons -->
       <div style="display:flex;gap:8px;padding-bottom:20px;">
-        <button id="dp-results-btn" onclick="openDriverRaceHistory()" style="flex:1;height:38px;border-radius:9px;background:rgba(255,255,255,.06);border:1px solid var(--border);color:var(--text2);font-family:var(--font-body);font-size:11px;font-weight:700;cursor:pointer;transition:all .15s;" onmouseover="this.style.background='rgba(255,255,255,.1)'" onmouseout="this.style.background='rgba(255,255,255,.06)'">🏁 Race Results</button>
-        <button id="dp-team-btn" onclick="openTeamProfileFromDriver()" style="flex:1;height:38px;border-radius:9px;background:rgba(255,255,255,.06);border:1px solid var(--border);color:var(--text2);font-family:var(--font-body);font-size:11px;font-weight:700;cursor:pointer;transition:all .15s;" onmouseover="this.style.background='rgba(255,255,255,.1)'" onmouseout="this.style.background='rgba(255,255,255,.06)'">🏎 Team Profile</button>
+        <button id="dp-results-btn" onclick="openDriverRaceHistory()" style="flex:1;height:38px;border-radius:9px;background:rgba(255,255,255,.06);border:1px solid var(--border);color:var(--text2);font-family:'Inter',sans-serif;font-size:11px;font-weight:700;cursor:pointer;transition:all .15s;" onmouseover="this.style.background='rgba(255,255,255,.1)'" onmouseout="this.style.background='rgba(255,255,255,.06)'">🏁 Race Results</button>
+        <button id="dp-team-btn" onclick="openTeamProfileFromDriver()" style="flex:1;height:38px;border-radius:9px;background:rgba(255,255,255,.06);border:1px solid var(--border);color:var(--text2);font-family:'Inter',sans-serif;font-size:11px;font-weight:700;cursor:pointer;transition:all .15s;" onmouseover="this.style.background='rgba(255,255,255,.1)'" onmouseout="this.style.background='rgba(255,255,255,.06)'">🏎 Team Profile</button>
       </div>
     </div>
   </div>
@@ -3723,7 +3642,7 @@ function openDriverPage(driverName, seriesHint){
   const accentColor = seriesColorMap[series] || '#e8186d';
 
   // Hero
-  document.getElementById('driver-page-hero-bg').style.background = `radial-gradient(circle, ${teamColor}55 0%, transparent 70%)`;
+  document.getElementById('driver-page-hero-bg').style.background = `linear-gradient(135deg, ${teamColor}44, ${teamColor}11)`;
   document.getElementById('driver-page-back').onclick = ()=>navigate(backPageMap[series]||'series');
   const seriesTag = document.getElementById('driver-page-series-tag');
   seriesTag.textContent = seriesLabelMap[series] || series.toUpperCase();
@@ -3744,7 +3663,7 @@ function openDriverPage(driverName, seriesHint){
   avatarEl.style.background = `linear-gradient(135deg, ${teamColor}, ${accentColor})`;
 
   document.getElementById('driver-page-name').textContent = driver.name;
-  const teamNameEl = document.getElementById('driver-page-team-label');
+  const teamNameEl = document.getElementById('driver-page-team');
   teamNameEl.textContent = team ? team.name : (standingsDriver?.team || '—');
 
   // Stats — prefer standings data for pts/wins/pods since info data often stays at 0
@@ -3776,28 +3695,15 @@ function openDriverPage(driverName, seriesHint){
   if(standingsDriver){
     standCard.style.display = 'block';
     const pos = standingsDriver.pos || (STANDINGS_DATA[series].drivers.indexOf(standingsDriver)+1);
-    const posColor = pos===1?'#f59e0b':pos===2?'rgba(255,255,255,.85)':pos===3?'#ff6b00':'#fff';
-    const suffix = (p)=>{ const m=p%100; if(m>=11&&m<=13) return 'th'; switch(p%10){case 1:return 'st';case 2:return 'nd';case 3:return 'rd';default:return 'th';} };
-    const medal = pos===1?'🥇':pos===2?'🥈':pos===3?'🥉':'';
-    document.getElementById('dpf-standing-medal').textContent = medal;
     const posEl = document.getElementById('dpf-standing-pos');
-    posEl.textContent = pos;
-    posEl.style.color = posColor;
-    posEl.insertAdjacentHTML('beforeend', `<sup>${suffix(pos)}</sup>`);
+    posEl.textContent = 'P'+pos;
+    posEl.style.color = pos===1?'#f59e0b':pos===2?'rgba(255,255,255,.8)':pos===3?'#ff6b00':'#fff';
     document.getElementById('dpf-standing-gap').textContent = standingsDriver.gap || '—';
-    document.getElementById('dpf-standing-bg').style.background = `radial-gradient(circle at 100% 0%, ${posColor}, transparent 60%)`;
-    standCard.style.borderColor = pos<=3 ? posColor+'33' : 'var(--border)';
   } else {
     standCard.style.display = 'none';
   }
 
   // Driver info rows
-  const infoIcons = {
-    'Full Name': '<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/>',
-    'Team': '<path d="M3 12h18M3 12l3-7h12l3 7M3 12v6a2 2 0 002 2h14a2 2 0 002-2v-6"/>',
-    'Series': '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>',
-    'Car Number': '<rect x="3" y="3" width="18" height="18" rx="2"/>',
-  };
   const infoRows = [
     ['Full Name', driver.name],
     ['Team', team ? team.name : (standingsDriver?.team || '—')],
@@ -3805,10 +3711,9 @@ function openDriverPage(driverName, seriesHint){
     ['Car Number', num !== '?' ? '#'+num : '—'],
   ];
   document.getElementById('dpf-info-rows').innerHTML = infoRows.map(([l,v])=>`
-    <div class="dpv-info-row">
-      <svg viewBox="0 0 24 24">${infoIcons[l]}</svg>
-      <span class="dpv-info-lbl">${l}</span>
-      <span class="dpv-info-val">${v}</span>
+    <div class="tpf-info-row">
+      <span class="tpf-info-lbl">${l}</span>
+      <span class="tpf-info-val">${v}</span>
     </div>`).join('');
 
   // Race results this season
@@ -3822,12 +3727,10 @@ function openDriverPage(driverName, seriesHint){
   });
   const resultsBlock = document.getElementById('dpf-results-block');
   const resultsList  = document.getElementById('dpf-results');
-  const resultsCount = document.getElementById('dpf-results-count');
   if(rows.length === 0){
     resultsBlock.style.display = 'none';
   } else {
     resultsBlock.style.display = 'block';
-    resultsCount.textContent = rows.length + (rows.length===1 ? ' race' : ' races');
     resultsList.innerHTML = rows.map(({race, entry}) => {
       const pos = entry.pos;
       const posCls = pos===1?'p1':pos===2?'p2':pos===3?'p3':pos<=10?'pts':'def';
