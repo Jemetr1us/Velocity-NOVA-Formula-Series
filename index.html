@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VNFS — Velocity NOVA Formula Series</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
@@ -70,49 +70,50 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-
 .vhero-stripes{position:absolute;inset:0;background:repeating-linear-gradient(115deg,rgba(255,255,255,.025) 0 2px,transparent 2px 34px);pointer-events:none;}
 .vhero-glow{position:absolute;top:-140px;left:-100px;width:520px;height:520px;background:radial-gradient(circle,rgba(232,24,109,.4) 0%,transparent 68%);filter:blur(10px);pointer-events:none;animation:vheroPulse 3.4s ease-in-out infinite;}
 .vhero-glow2{position:absolute;bottom:-160px;right:-60px;width:460px;height:460px;background:radial-gradient(circle,rgba(124,58,237,.32) 0%,transparent 68%);filter:blur(10px);pointer-events:none;animation:vheroPulse 3.4s ease-in-out infinite 1.2s;}
-.vhero-body{position:relative;z-index:1;display:grid;grid-template-columns:1.5fr 1fr;gap:36px;padding:56px 32px 0;align-items:end;}
-.vhero-tag-row{display:flex;align-items:center;gap:12px;margin-bottom:18px;opacity:0;animation:vheroIn .6s ease forwards .05s;}
-.vhero-tag{font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#000;background:var(--vnfs-grad);padding:5px 10px;border-radius:3px;}
-.vhero-live{display:flex;align-items:center;gap:6px;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);}
-.vhero-live i{width:6px;height:6px;border-radius:50%;background:#22c55e;display:inline-block;animation:vheroCountPulse 1.4s ease infinite;}
-.vhero-title{font-family:'Inter',sans-serif;font-weight:900;letter-spacing:-.04em;line-height:.86;margin:0 0 18px;position:relative;opacity:0;animation:vheroIn .7s ease forwards .15s;}
-.vhero-title .l1{display:block;font-size:clamp(2.6rem,7vw,5.2rem);color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.9);}
-.vhero-title .l2{display:block;font-size:clamp(2.6rem,7vw,5.2rem);background:var(--vnfs-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-top:-.08em;}
+.vhero-body{position:relative;z-index:1;padding:96px 32px 76px;}
+.vhero-col{max-width:640px;}
+.vhero-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:20px;opacity:0;animation:vheroIn .6s ease forwards .05s;}
+.vhero-eyebrow-dash{width:26px;height:2px;background:var(--vnfs-pink);display:inline-block;flex-shrink:0;}
+.vhero-eyebrow-text{font-size:10.5px;font-weight:800;letter-spacing:.26em;text-transform:uppercase;color:var(--vnfs-pink);}
+.vhero-title{font-family:'Anton',sans-serif;font-weight:400;letter-spacing:-.01em;line-height:.88;margin:0 0 18px;position:relative;opacity:0;animation:vheroIn .7s ease forwards .15s;text-transform:uppercase;}
+.vhero-title .l1{display:block;font-size:clamp(2.8rem,7.5vw,5.6rem);color:#fff;}
+.vhero-title .l2{display:block;font-size:clamp(2.8rem,7.5vw,5.6rem);background:var(--vnfs-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-top:-.05em;}
 .vhero-desc{font-size:13px;color:var(--text2);line-height:1.7;max-width:420px;margin-bottom:26px;opacity:0;animation:vheroIn .7s ease forwards .28s;}
-.vhero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:48px;opacity:0;animation:vheroIn .7s ease forwards .4s;}
+.vhero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px;opacity:0;animation:vheroIn .7s ease forwards .4s;}
 .vhero-btn{height:42px;padding:0 22px;border-radius:3px;font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;font-family:'Inter',sans-serif;display:inline-flex;align-items:center;gap:8px;transition:all .18s;border:none;}
 .vhero-btn.primary{background:var(--vnfs-grad);color:#fff;}
 .vhero-btn.primary:hover{transform:translateX(3px);}
 .vhero-btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.25);}
 .vhero-btn.ghost:hover{border-color:#fff;background:rgba(255,255,255,.06);}
 
-.vhero-card{background:rgba(255,255,255,.035);border:1px solid var(--border2);border-radius:10px;padding:20px;margin-bottom:24px;backdrop-filter:blur(6px);opacity:0;animation:vheroIn .7s ease forwards .3s;}
-.vhero-card-lbl{font-size:9.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--vnfs-pink);margin-bottom:12px;}
-.vhero-card-race{font-size:1.3rem;font-weight:900;color:#fff;letter-spacing:-.02em;margin-bottom:4px;}
-.vhero-card-circuit{font-size:11.5px;color:var(--text3);margin-bottom:16px;}
-.vhero-countdown{display:flex;gap:8px;}
-.vc-box{flex:1;background:rgba(0,0,0,.4);border:1px solid var(--border);border-radius:6px;padding:8px 4px;text-align:center;}
-.vc-num{font-size:1.15rem;font-weight:900;color:#fff;line-height:1;}
-.vc-lbl{font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-top:3px;}
-.vhero-stat-row{display:flex;gap:2px;opacity:0;animation:vheroIn .7s ease forwards .5s;}
-.vhero-stat{flex:1;border-left:2px solid var(--vnfs-pink);padding:2px 0 2px 10px;}
-.vhero-stat-num{font-size:1.15rem;font-weight:900;color:#fff;letter-spacing:-.02em;}
-.vhero-stat-lbl{font-size:8.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-top:2px;}
+.vhero-stat-row{display:flex;gap:36px;opacity:0;animation:vheroIn .7s ease forwards .5s;margin-top:8px;}
+.vhero-stat{border-left:none;padding:0;}
+.vhero-stat-num{font-family:'Anton',sans-serif;font-weight:400;font-size:1.9rem;color:var(--vnfs-pink);letter-spacing:0;line-height:1;}
+.vhero-stat-lbl{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);margin-top:6px;}
 
-.vhero-marquee{position:relative;z-index:1;margin-top:40px;border-top:1px solid var(--border);overflow:hidden;white-space:nowrap;background:rgba(255,255,255,.02);}
+.vhero-marquee{position:relative;z-index:1;margin-top:0;border-top:1px solid var(--border);overflow:hidden;white-space:nowrap;background:rgba(255,255,255,.02);}
+.vhero-countdown-strip{position:relative;z-index:1;border-top:1px solid var(--border);padding:18px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
+.vcs-label{font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--text3);text-transform:uppercase;}
+.vcs-label .vcs-name{color:#fff;font-weight:800;}
+.vcs-timer{display:flex;align-items:center;gap:9px;}
+.vcs-unit{display:flex;flex-direction:column;align-items:center;min-width:30px;}
+.vcs-num{font-family:'Anton',sans-serif;font-weight:400;font-size:1.35rem;color:var(--vnfs-pink);line-height:1;font-variant-numeric:tabular-nums;}
+.vcs-lbl{font-size:8px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-top:4px;}
+.vcs-colon{font-family:'Anton',sans-serif;font-size:1.1rem;color:var(--border2);}
+.vcs-live{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--vnfs-pink);}
+.vcs-live i{width:7px;height:7px;border-radius:50%;background:var(--vnfs-pink);display:inline-block;animation:vheroCountPulse 1.4s ease infinite;}
 .vhero-marquee-track{display:inline-flex;animation:vheroTicker 26s linear infinite;padding:12px 0;}
 .vhero-marquee-track span{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);padding:0 22px;border-right:1px solid var(--border2);}
 .vhero-marquee-track span b{color:#fff;}
 
 @media (max-width:860px){
-  .vhero-body{grid-template-columns:1fr;padding:40px 20px 0;gap:24px;}
+  .vhero-body{padding:52px 20px 40px;}
   .vhero-title .l1,.vhero-title .l2{font-size:clamp(2.2rem,11vw,3.4rem);}
-  .vhero-actions{margin-bottom:28px;}
+  .vhero-actions{margin-bottom:8px;}
 }
 
 
 /* HOME: UPCOMING */
-.home-next{padding:24px 32px;}
 .section-label{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:16px;}
 .upcoming-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;}
 .uc{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px;cursor:pointer;transition:border-color .15s,background .15s;position:relative;overflow:hidden;}
@@ -134,7 +135,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-
 .uc-status.live{background:rgba(232,24,109,.15);color:var(--red);}
 
 /* HOME: STANDINGS STRIP */
-.home-standings{padding:0 32px 32px;}
+.home-standings{padding:56px 32px 32px;}
 .standings-strip{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;}
 .ss-header{padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;}
 .ss-title{font-size:12px;font-weight:700;color:#fff;}
@@ -164,26 +165,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-
 .sc-progress-bar.animating{transition:width 15s linear;width:100%;}
 
 /* RACE COUNTDOWN */
-.race-countdown{margin:0 0 12px;background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;position:relative;width:100%;}
-.rcd-banner{height:3px;width:100%;}
-.rcd-body{padding:20px 24px 18px;display:flex;align-items:center;gap:20px;}
-.rcd-left{flex:1;min-width:0;}
-.rcd-eyebrow{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--text3);margin-bottom:6px;}
-.rcd-name{font-size:18px;font-weight:900;color:#fff;line-height:1.1;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.rcd-circuit{font-size:10px;color:var(--text3);margin-bottom:10px;}
-.rcd-meta{display:flex;gap:12px;align-items:center;}
-.rcd-date{font-size:11px;font-weight:700;color:var(--text2);}
-.rcd-series-tag{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:2px 7px;border-radius:4px;background:rgba(232,24,109,.12);color:var(--red);}
-.rcd-flag{font-size:32px;flex-shrink:0;filter:drop-shadow(0 2px 8px rgba(0,0,0,.4));}
-.rcd-timer{display:flex;gap:10px;flex-shrink:0;}
-.rcd-unit{display:flex;flex-direction:column;align-items:center;gap:3px;}
-.rcd-num{font-size:28px;font-weight:900;color:#fff;letter-spacing:-.02em;line-height:1;font-variant-numeric:tabular-nums;min-width:44px;text-align:center;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:8px 4px;}
-.rcd-lbl{font-size:8px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);}
-.rcd-sep{font-size:22px;font-weight:900;color:var(--border2);align-self:flex-start;margin-top:8px;}
-.rcd-live{display:flex;align-items:center;gap:8px;padding:10px 24px;background:rgba(232,24,109,.08);border-top:1px solid rgba(232,24,109,.15);}
-.rcd-live-dot{width:8px;height:8px;border-radius:50%;background:var(--red);animation:pulse 1.2s ease-in-out infinite;}
-.rcd-live-text{font-size:11px;font-weight:700;color:var(--red);letter-spacing:.06em;text-transform:uppercase;}
-.rcd-done{font-size:12px;font-weight:700;color:var(--text3);text-align:center;padding:18px;}
+/* home-standings section spacing below */
 .series-hub-hero{padding:40px 32px 28px;border-bottom:1px solid var(--border);}
 .page-title{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;letter-spacing:-.03em;line-height:.95;margin-bottom:8px;}
 .page-sub{font-size:13px;color:var(--text2);font-weight:400;line-height:1.6;}
@@ -479,6 +461,35 @@ body.admin-active .dr-drag{display:block;}
 .badge-f3{background:rgba(34,211,238,.12);color:#22d3ee;}
 .badge-f4{background:rgba(167,139,250,.12);color:#a78bfa;}
 .badge-end{background:rgba(34,197,94,.12);color:#22c55e;}
+
+/* SEARCH */
+.tb-search-btn{height:32px;width:32px;border-radius:7px;border:1px solid var(--border2);background:transparent;color:var(--text2);cursor:pointer;transition:all .15s;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.tb-search-btn:hover{background:var(--surface);color:#fff;}
+.tb-search-btn svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+#searchOverlay{position:fixed;inset:0;background:rgba(0,0,0,.75);backdrop-filter:blur(8px);display:none;align-items:flex-start;justify-content:center;z-index:900000;padding:12vh 16px 0;}
+#searchOverlay.open{display:flex;}
+#searchBox{width:100%;max-width:560px;background:var(--surface);border:1px solid var(--border2);border-radius:14px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5);animation:vheroIn .18s ease;}
+#searchInputRow{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid var(--border);}
+#searchInputRow svg{width:16px;height:16px;stroke:var(--text3);fill:none;stroke-width:2;flex-shrink:0;}
+#searchInput{flex:1;background:transparent;border:none;outline:none;color:#fff;font-family:'Inter',sans-serif;font-size:14px;font-weight:500;}
+#searchInput::placeholder{color:var(--text3);}
+#searchEsc{font-size:10px;font-weight:700;color:var(--text3);border:1px solid var(--border2);border-radius:5px;padding:3px 6px;letter-spacing:.04em;flex-shrink:0;}
+#searchResults{max-height:56vh;overflow-y:auto;padding:8px;}
+#searchResults:empty{display:none;}
+.sr-group-lbl{font-size:9.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);padding:10px 10px 6px;}
+.sr-item{display:flex;align-items:center;gap:11px;padding:9px 10px;border-radius:8px;cursor:pointer;transition:background .1s;}
+.sr-item:hover,.sr-item.active{background:var(--surface2);}
+.sr-icon{width:28px;height:28px;border-radius:7px;background:var(--bg3);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px;}
+.sr-icon svg{width:14px;height:14px;stroke:var(--text2);fill:none;stroke-width:2;}
+.sr-main{flex:1;min-width:0;}
+.sr-title{font-size:13px;font-weight:600;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.sr-sub{font-size:11px;color:var(--text3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px;}
+.sr-tag{font-size:9px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--text3);border:1px solid var(--border2);border-radius:4px;padding:2px 6px;flex-shrink:0;}
+#searchEmpty{padding:36px 20px;text-align:center;color:var(--text3);font-size:12.5px;}
+#searchHint{padding:10px 16px;border-top:1px solid var(--border);display:flex;gap:14px;font-size:10px;color:var(--text3);font-weight:600;}
+#searchHint span{display:flex;align-items:center;gap:5px;}
+#searchHint kbd{background:var(--bg3);border:1px solid var(--border2);border-radius:4px;padding:1px 5px;font-family:inherit;}
+@media (max-width:640px){#searchOverlay{padding:8vh 10px 0;}}
 
 /* ADMIN */
 #adminShield{position:fixed;bottom:16px;right:16px;width:40px;height:40px;background:var(--surface);border:1px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:999999998;transition:.15s;}
@@ -803,11 +814,10 @@ body.admin-active .editable-hint{display:block;}
   }
 
   /* ── Home hero ── */
-  .vhero-body{padding:32px 16px 0;}
+  .vhero-body{padding:44px 16px 40px;}
   .vhero-actions{gap:8px;flex-wrap:wrap;}
   .vhero-actions .vhero-btn{font-size:11px;padding:0 14px;height:38px;flex:1 1 auto;justify-content:center;}
-  .vhero-stat-row{flex-wrap:wrap;gap:10px 2px;}
-  .vhero-countdown{flex-wrap:wrap;gap:6px;}
+  .vhero-stat-row{flex-wrap:wrap;gap:16px 24px;}
 
   /* ── Series cards ── */
   .series-grid{grid-template-columns:1fr;padding:16px;}
@@ -823,10 +833,9 @@ body.admin-active .editable-hint{display:block;}
   /* ── Upcoming races ── */
   .upcoming-grid{grid-template-columns:1fr;padding:0 16px 16px;}
 
-  /* ── Race countdown ── */
-  .rcd-body{padding:14px 16px;gap:12px;flex-wrap:wrap;}
-  .rcd-timer{flex-wrap:wrap;gap:6px;}
-  .rcd-num{font-size:22px;min-width:36px;padding:6px 4px;}
+  /* ── Race countdown strip ── */
+  .vhero-countdown-strip{padding:14px 16px;flex-direction:column;align-items:flex-start;gap:10px;}
+  .vcs-num{font-size:1.1rem;}
 
   /* ── Standings strip (home) ── */
   .standings-section{padding:0 16px 16px;}
@@ -1006,6 +1015,9 @@ body.admin-active .editable-hint{display:block;}
   <span class="tb-title" id="topbar-title">VNFS</span>
   <span class="tb-sub" id="topbar-sub">Velocity NOVA Formula Series</span>
   <div class="tb-spacer"></div>
+  <button class="tb-search-btn" onclick="openSearch()" title="Search (Ctrl+K)">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+  </button>
   <button class="tb-btn tb-social" onclick="window.open(SOCIAL_LINKS.discord,'_blank')" style="display:flex;align-items:center;gap:6px;">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
     Discord
@@ -1025,28 +1037,16 @@ body.admin-active .editable-hint{display:block;}
     <div class="vhero-glow"></div>
     <div class="vhero-glow2"></div>
     <div class="vhero-body">
-      <div>
-        <div class="vhero-tag-row">
-          <span class="vhero-tag">2026 Season</span>
-          <span class="vhero-live"><i></i>5 Championship Series</span>
+      <div class="vhero-col">
+        <div class="vhero-eyebrow">
+          <span class="vhero-eyebrow-dash"></span>
+          <span class="vhero-eyebrow-text">2026 Season · 5 Championship Series</span>
         </div>
         <h1 class="vhero-title"><span class="l1">VELOCITY</span><span class="l2">NOVA</span></h1>
         <p class="vhero-desc">Four championships. One ladder. The home of open-wheel and endurance racing's next generation of champions — from Formula 3 to F1 glory and GT3 to Hypercar.</p>
         <div class="vhero-actions">
           <button class="vhero-btn primary" onclick="navigate('series')">Explore Series →</button>
           <button class="vhero-btn ghost" onclick="navigate('schedule')">Race Calendar</button>
-        </div>
-      </div>
-      <div>
-        <div class="vhero-card">
-          <div class="vhero-card-lbl">Next Round</div>
-          <div class="vhero-card-race">Las Vegas Grand Prix</div>
-          <div class="vhero-card-circuit">Las Vegas Strip Circuit · 🇺🇸</div>
-          <div class="vhero-countdown">
-            <div class="vc-box"><div class="vc-num">03</div><div class="vc-lbl">Round</div></div>
-            <div class="vc-box"><div class="vc-num">Jul 11–12</div><div class="vc-lbl">Date</div></div>
-            <div class="vc-box"><div class="vc-num">F1·F2·F3</div><div class="vc-lbl">Series</div></div>
-          </div>
         </div>
         <div class="vhero-stat-row">
           <div class="vhero-stat"><div class="vhero-stat-num">4</div><div class="vhero-stat-lbl">Series</div></div>
@@ -1056,6 +1056,7 @@ body.admin-active .editable-hint{display:block;}
         </div>
       </div>
     </div>
+    <div class="vhero-countdown-strip" id="vhero-countdown-strip"></div>
     <div class="vhero-marquee">
       <div class="vhero-marquee-track">
         <span><b>VNFS F1</b> · Nick leads the standings</span>
@@ -1070,11 +1071,6 @@ body.admin-active .editable-hint{display:block;}
         <span>Next: <b>Las Vegas Grand Prix</b> · Jul 11–12</span>
       </div>
     </div>
-  </div>
-  <div class="home-next">
-    <div class="race-countdown" id="race-countdown"></div>
-    <div class="section-label" id="home-next-label" style="margin-top:28px;">Next Up</div>
-    <div class="upcoming-grid" id="home-upcoming-grid"></div>
   </div>
   <div class="home-standings" id="home-standings-section"></div>
 </div>
@@ -1622,6 +1618,23 @@ body.admin-active .editable-hint{display:block;}
   </div>
 </div>
 
+<!-- SEARCH -->
+<div id="searchOverlay" onclick="if(event.target===this)closeSearch()">
+  <div id="searchBox">
+    <div id="searchInputRow">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input id="searchInput" type="text" placeholder="Search drivers, teams, races, pages…" autocomplete="off" oninput="runSearch(this.value)" onkeydown="searchKeyNav(event)">
+      <span id="searchEsc">ESC</span>
+    </div>
+    <div id="searchResults"></div>
+    <div id="searchHint">
+      <span><kbd>↑</kbd><kbd>↓</kbd> Navigate</span>
+      <span><kbd>↵</kbd> Select</span>
+      <span><kbd>ESC</kbd> Close</span>
+    </div>
+  </div>
+</div>
+
 <!-- ADMIN -->
 <div id="adminShield" onclick="document.getElementById('adminLogin').classList.add('open')">
   <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
@@ -2146,7 +2159,7 @@ const RESULTS = {
 const STANDINGS_DATA = {
   f1: {
     drivers: [
-      {name:'Michael',    code:'MD1', team:'Mercedes-AMG',                   pts:26, wins:1,pods:1,dnf:0,pos:1,  gap:'—',   form:['W']},
+      {name:'Michael',    code:'MD1', team:'Mercedes-AMG',                   pts:26, wins:1,pods:1,dnf:0,pos:1,  gap:'—',   form:['W'], hidden:true},
       {name:'Nick',       code:'MD1', team:'Scuderia Ferrari',               pts:51, wins:1,pods:2,dnf:0,pos:2,  gap:'0',   form:['W','W']},
       {name:'Douzy',      code:'MD2', team:'Richard Mille LM Motorsport F1', pts:39, wins:0,pods:2,dnf:0,pos:3,  gap:'-6',  form:['2','2']},
       {name:'Lory',       code:'MD1', team:'Richard Mille LM Motorsport F1', pts:31, wins:0,pods:2,dnf:0,pos:4,  gap:'-11', form:['3','3']},
@@ -2322,16 +2335,16 @@ const STANDINGS_DATA = {
 const INFO_DATA = {
   f1: {
     teams: [
-      {name:'Scuderia Ferrari', engine:'CEO: pringle | Ferrari & AFC CEO', color:'#dc143c', drivers:[
+      {name:'Scuderia Ferrari', engine:'CEO: pringle | Ferrari CEO', color:'#dc143c', drivers:[
         {num:'03', code:'MD1', name:'Nick', pts:0, wins:0, pods:0},
         {num:'67', code:'MD2', name:'Vitality', pts:0, wins:0, pods:0},
       ]},
       {name:'McLaren', engine:'CEO: Taiwan | McLaren & Isreal CEO · Director: Zachary | McLaren Director', color:'#ff8000', drivers:[
-        {num:'33',  code:'MD1', name:'N0vac', pts:0, wins:0, pods:0},
-        {num:'12',  code:'MD2', name:'Ageftyg2', pts:0, wins:0, pods:0},
-        {num:'39',  code:'RD1', name:'CHES', pts:0, wins:0, pods:0},
+        {num:'33', code:'MD1', name:'N0vac', pts:0, wins:0, pods:0},
+        {num:'12', code:'MD2', name:'Ageftyg2', pts:0, wins:0, pods:0},
+        {num:'39', code:'RD1', name:'CHES', pts:0, wins:0, pods:0},
       ]},
-      {name:'Monster Cadillac F1 Team', engine:'CEO: pтRúhān | Monster CEO · Director: pтRúhān | Monster CEO', color:'#22c55e', drivers:[
+      {name:'Monster Cadillac F1 Team', engine:'CEO: Bomba · Director: Rúhān | Former CEO', color:'#22c55e', drivers:[
         {num:'14',  code:'MD1', name:'smol', pts:0, wins:0, pods:0},
         {num:'79',  code:'MD2', name:'Daih', pts:0, wins:0, pods:0},
         {num:'888', code:'RD1', name:'Oliveira', pts:0, wins:0, pods:0},
@@ -2340,39 +2353,36 @@ const INFO_DATA = {
         {num:'01',  code:'MD1', name:'Lory', pts:0, wins:0, pods:0},
         {num:'999', code:'MD2', name:'Douzy', pts:0, wins:0, pods:0},
       ]},
-      {name:'Red Bull Racing', engine:'Director: Dennis', color:'#1e3a8a', drivers:[
+      {name:'Red Bull Racing', engine:'', color:'#1e3a8a', drivers:[
         {num:'63', code:'MD1', name:'Lightening', pts:0, wins:0, pods:0},
-        {num:'—',  code:'MD2', name:'Lando_Norris',    pts:0, wins:0, pods:0},
+        {num:'—',  code:'MD2', name:'Lando_Norris (@lpgame04)', pts:0, wins:0, pods:0},
       ]},
-      {name:'Cassien Motorsport', engine:'CEO: godzilla · Director: Parabellum', color:'#22c55e', drivers:[
+      {name:'Cassien Motorsport', engine:'CEO: Zak | Cassien CEO · Director: Parabellum (@Ultimat8X)', color:'#22c55e', drivers:[
         {num:'99',  code:'MD1', name:'Jeffz', pts:0, wins:0, pods:0},
         {num:'27',  code:'MD2', name:'Lewis', pts:0, wins:0, pods:0},
         {num:'111', code:'RD1', name:'shawn', pts:0, wins:0, pods:0},
       ]},
-      {name:'Monster Energy Performance', engine:'CEO: pтRúhān | Monster CEO', color:'#84cc16', drivers:[
+      {name:'Monster Energy Performance', engine:'CEO: Bomba', color:'#84cc16', drivers:[
         {num:'17', code:'MD1', name:'theo', pts:0, wins:0, pods:0},
         {num:'20', code:'MD2', name:'Nath', pts:0, wins:0, pods:0},
         {num:'07', code:'RD1', name:'Chester', pts:0, wins:0, pods:0},
       ]},
       {name:'Isreal Racing Point', engine:'CEO: Taiwan | McLaren & Isreal CEO', color:'#60a5fa', drivers:[
-        {num:'10', code:'MD1', name:'Zemmer', pts:0, wins:0, pods:0},
         {num:'16', code:'MD2', name:'Joshua', pts:0, wins:0, pods:0},
-        {num:'—',  code:'RD1', name:'Milooo',    pts:0, wins:0, pods:0},
-        {num:'—',  code:'RD2', name:'Floppa',    pts:0, wins:0, pods:0},
+        {num:'—',  code:'RD1', name:'Milooo (@Milihosecre)', pts:0, wins:0, pods:0},
+        {num:'—',  code:'RD2', name:'Floppa (@juanjo31090)', pts:0, wins:0, pods:0},
       ]},
       {name:'Mercedes-AMG', engine:'CEO: LeYeetBoi | Mercedes CEO', color:'#00d2be', drivers:[
-        {num:'80', code:'MD1', name:'Michael', pts:0, wins:0, pods:0},
+        {num:'72', code:'MD1', name:'Noel', pts:0, wins:0, pods:0},
         {num:'95', code:'MD2', name:'Alpha', pts:0, wins:0, pods:0},
         {num:'90', code:'RD1', name:'Rats', pts:0, wins:0, pods:0},
       ]},
       {name:'Hertz Porsche', engine:'CEO: yake | JHP - ATP CEO', color:'#b91c1c', drivers:[
-        {num:'55', code:'MD1', name:'Elijah', pts:0, wins:0, pods:0},
-        {num:'15', code:'MD2', name:'Sunrise', pts:0, wins:0, pods:0},
-        {num:'26', code:'MD3', name:'Crocs', pts:0, wins:0, pods:0},
+        {num:'15', code:'MD2', name:'Sun_Rise', pts:0, wins:0, pods:0},
+        {num:'26', code:'RD1', name:'Crocs', pts:0, wins:0, pods:0},
       ]},
       {name:'Aero Apex Racing', engine:'CEO: Flekzy | Aero CEO · Director: Ernesto2013 | AAR Team Director', color:'#7c3aed', drivers:[
-        {num:'2',  code:'MD1', name:'yktomms the sequel', pts:0, wins:0, pods:0},
-        {num:'28', code:'MD2', name:'Dovante', pts:0, wins:0, pods:0},
+        {num:'28', code:'MD1', name:'Dovante', pts:0, wins:0, pods:0},
       ]},
     ]
   },
@@ -2390,26 +2400,25 @@ const INFO_DATA = {
       ]},
       {name:'Kimibear Racing', engine:'CEO: Uzairi | Kimibear CEO', color:'#f59e0b', drivers:[
         {num:'96', code:'MD1', name:'Newbie', pts:0, wins:0, pods:0},
-        {num:'—',  code:'MD2', name:'taz',    pts:0, wins:0, pods:0},
       ]},
-      {name:'Monster Juniors F2', engine:'CEO: pтRúhān | Monster CEO', color:'#84cc16', drivers:[
-        {num:'—',  code:'MD1', name:'haimiya (alonso)', pts:0, wins:0, pods:0},
+      {name:'Monster Juniors F2', engine:'CEO: Bomba', color:'#84cc16', drivers:[
+        {num:'22', code:'MD1', name:'Alistair', pts:0, wins:0, pods:0},
         {num:'07', code:'MD2', name:'Chester', pts:0, wins:0, pods:0},
       ]},
-      {name:'PREMA Racing', engine:'CEO: —', color:'#dc143c', drivers:[
-        {num:'22',  code:'MD1', name:'Patryk', pts:0, wins:0, pods:0},
-        {num:'888', code:'MD2', name:'Oliveira', pts:0, wins:0, pods:0},
+      {name:'PREMA Racing', engine:'CEO: LeYeetBoi | Mercedes CEO', color:'#dc143c', drivers:[
+        {num:'888', code:'MD1', name:'Oliveira', pts:0, wins:0, pods:0},
+        {num:'22',  code:'MD2', name:'Yuki', pts:0, wins:0, pods:0},
       ]},
       {name:'Carti Racing Association', engine:'CEO: Tiyu | Carti CEO · Director: Sushi | Carti Director', color:'#ec4899', drivers:[
         {num:'71', code:'MD1', name:'Bobert', pts:0, wins:0, pods:0},
-        {num:'—',  code:'MD2', name:'themightyringer$',    pts:0, wins:0, pods:0},
+        {num:'—',  code:'MD2', name:'themightyringer$', pts:0, wins:0, pods:0},
         {num:'34', code:'RD1', name:'Jandosak', pts:0, wins:0, pods:0},
         {num:'00', code:'RD2', name:'Chonki', pts:0, wins:0, pods:0},
       ]},
       {name:'Acura Team Penske', engine:'CEO: yake | JHP - ATP CEO', color:'#b91c1c', drivers:[
         {num:'26', code:'MD1', name:'Crocs', pts:0, wins:0, pods:0},
         {num:'17', code:'MD2', name:'Igorexe', pts:0, wins:0, pods:0},
-        {num:'—',  code:'RD1', name:'Roven',    pts:0, wins:0, pods:0},
+        {num:'—',  code:'RD1', name:'Roven', pts:0, wins:0, pods:0},
       ]},
       {name:'Night Reapers X', engine:'CEO: Ford | Reapers CEO', color:'#6b7280', drivers:[
         {num:'72',  code:'MD1', name:'Batman', pts:0, wins:0, pods:0},
@@ -2418,37 +2427,34 @@ const INFO_DATA = {
         {num:'420', code:'RD2', name:'Alex', pts:0, wins:0, pods:0},
       ]},
       {name:'Cassien Motorsports F2', engine:'CEO: Zak | Cassien CEO', color:'#22c55e', drivers:[
-        {num:'87', code:'MD1', name:'Matux', pts:0, wins:0, pods:0},
-        {num:'876',code:'MD2', name:'Zaewerts', pts:0, wins:0, pods:0},
+        {num:'876', code:'MD1', name:'Zaewerts', pts:0, wins:0, pods:0},
       ]},
-      {name:'AF Corsa', engine:'CEO: pringle | Ferrari & AFC CEO', color:'#e11d48', drivers:[
+      {name:'AF Corsa', engine:'CEO: pringle | Ferrari CEO', color:'#e11d48', drivers:[
         {num:'16', code:'MD1', name:'Cars', pts:0, wins:0, pods:0},
         {num:'10', code:'MD2', name:'Gasly', pts:0, wins:0, pods:0},
-        {num:'70', code:'RD1', name:'Perez', pts:0, wins:0, pods:0},
       ]},
     ]
   },
   f3: {
     teams: [
-      {name:'Anonymous Juniors', engine:'CEO: pringle | Ferrari & AFC CEO', color:'#dc143c', drivers:[
+      {name:'Anonymous Juniors', engine:'CEO: pringle | Ferrari CEO', color:'#dc143c', drivers:[
         {num:'19', code:'MD1', name:'Orco', pts:0, wins:0, pods:0},
-        {num:'—',  code:'MD2', name:'Max_Verstappen',    pts:0, wins:0, pods:0},
+        {num:'—',  code:'MD2', name:'Max_Verstappen (@cheetah881)', pts:0, wins:0, pods:0},
         {num:'70', code:'MD3', name:'Perez', pts:0, wins:0, pods:0},
-        {num:'—',  code:'RD1', name:'A.Alonso33',    pts:0, wins:0, pods:0},
+        {num:'—',  code:'RD1', name:'A.Alonso33', pts:0, wins:0, pods:0},
       ]},
-      {name:'Cassien Motorsport F3', engine:'CEO: godzilla · Director: unknown-user', color:'#22c55e', drivers:[
-        {num:'—',  code:'MD1', name:'Axy',    pts:0, wins:0, pods:0},
+      {name:'Cassien Motorsport F3', engine:'CEO: Zak | Cassien CEO', color:'#22c55e', drivers:[
+        {num:'—',  code:'MD1', name:'Axy (@aking1921)', pts:0, wins:0, pods:0},
         {num:'78', code:'MD2', name:'Mikey', pts:0, wins:0, pods:0},
-        {num:'—',  code:'MD3', name:'unknown-user',    pts:0, wins:0, pods:0},
-        {num:'—',  code:'RD1', name:'Axy',    pts:0, wins:0, pods:0},
+        {num:'27', code:'MD3', name:'Cobalt', pts:0, wins:0, pods:0},
       ]},
-      {name:'Monster Motorsports F3', engine:'CEO: pтRúhān | Monster CEO', color:'#84cc16', drivers:[
+      {name:'Monster Motorsports F3', engine:'CEO: Bomba', color:'#84cc16', drivers:[
         {num:'97', code:'MD1', name:'Nahim', pts:0, wins:0, pods:0},
       ]},
       {name:'LMP', engine:'CEO: Mikos | LM CEO', color:'#a78bfa', drivers:[
         {num:'16', code:'MD1', name:'PradX', pts:0, wins:0, pods:0},
         {num:'53', code:'MD2', name:'Piko', pts:0, wins:0, pods:0},
-        {num:'03', code:'MD3', name:'Ukizi', pts:0, wins:0, pods:0},
+        {num:'91', code:'MD3', name:'Ukizi', pts:0, wins:0, pods:0},
       ]},
       {name:'Isreal Racing Point F3', engine:'CEO: Taiwan | McLaren & Isreal CEO', color:'#60a5fa', drivers:[
         {num:'00',  code:'MD1', name:'Chonki', pts:0, wins:0, pods:0},
@@ -2460,18 +2466,18 @@ const INFO_DATA = {
         {num:'14', code:'MD2', name:'wavee', pts:0, wins:0, pods:0},
         {num:'17', code:'MD3', name:'Swixks', pts:0, wins:0, pods:0},
       ]},
-      {name:'Aero Apex Racing F3', engine:'CEO: Flekzy | Aero CEO', color:'#7c3aed', drivers:[
+      {name:'Aero Apex Racing', engine:'CEO: Flekzy | Aero CEO', color:'#7c3aed', drivers:[
         {num:'04', code:'MD1', name:'Bartos', pts:0, wins:0, pods:0},
-        {num:'—',  code:'MD2', name:'Spooky',    pts:0, wins:0, pods:0},
+        {num:'—',  code:'MD2', name:'Spooky', pts:0, wins:0, pods:0},
       ]},
       {name:"Tarigy's Motorsport Team", engine:"CEO: Lauu | Tarigy's Director", color:'#f59e0b', drivers:[
         {num:'26', code:'MD1', name:'ShadowRex', pts:0, wins:0, pods:0},
-        {num:'—',  code:'MD2', name:'Peters',    pts:0, wins:0, pods:0},
+        {num:'—',  code:'MD2', name:'Peters (@PetersCL)', pts:0, wins:0, pods:0},
         {num:'77', code:'MD3', name:'DOA', pts:0, wins:0, pods:0},
       ]},
       {name:'GlitchGP', engine:'CEO: LeYeetBoi | Mercedes CEO', color:'#00d2be', drivers:[
-        {num:'—',   code:'MD1', name:'Unironically',    pts:0, wins:0, pods:0},
-        {num:'876', code:'MD2', name:'Zaewerts', pts:0, wins:0, pods:0},
+        {num:'—',  code:'MD1', name:'Unironically', pts:0, wins:0, pods:0},
+        {num:'07', code:'MD2', name:'Weee', pts:0, wins:0, pods:0},
       ]},
     ]
   },
@@ -2479,27 +2485,28 @@ const INFO_DATA = {
     teams: [
       /* ── GT3 ── */
       {name:'Manthey Porsche', cls:'gt3', engine:'Porsche', color:'#22c55e', drivers:[
-        {num:'—', code:'D1', name:'Albert', pts:0, wins:0, pods:0},
-        {num:'—', code:'D2', name:'Ticken', pts:0, wins:0, pods:0},
-        {num:'—', code:'D3', name:'Haydo', pts:0, wins:0, pods:0},
+        {num:'—', code:'D1', name:'albertovocado', pts:0, wins:0, pods:0},
+        {num:'—', code:'D2', name:'Ticken (@kingzillamaster)', pts:0, wins:0, pods:0},
+        {num:'—', code:'D3', name:'haydothepotato66', pts:0, wins:0, pods:0},
       ]},
       {name:'Team WRT', cls:'gt3', engine:'BMW', color:'#e5e7eb', drivers:[
-        {num:'—', code:'D1', name:'HONOR3D', pts:0, wins:0, pods:0},
-        {num:'—', code:'D2', name:'Dave', pts:0, wins:0, pods:0},
+        {num:'—', code:'D1', name:'HONOR3D (@Aarnavs_shadow)', pts:0, wins:0, pods:0},
+        {num:'—', code:'D2', name:'davethecheesewizrad', pts:0, wins:0, pods:0},
+        {num:'—', code:'D3', name:'jsko (@viyaan124)', pts:0, wins:0, pods:0},
       ]},
-      {name:'Vista AF Course', cls:'gt3', engine:'Ferrari', color:'#dc143c', drivers:[
-        {num:'—',  code:'D1', name:'Chester', pts:0, wins:0, pods:0},
-        {num:'—',  code:'D2', name:'q0d6', pts:0, wins:0, pods:0},
-        {num:'54', code:'D3', name:'ZOLl', pts:0, wins:0, pods:0},
+      {name:'Vista AF Course', cls:'gt3', engine:'Ferrari · Team Owner: Night_Alloy | FERRARI/LMP CEO', color:'#dc143c', drivers:[
+        {num:'—',  code:'D1', name:'Chester (@Chester_107)', pts:0, wins:0, pods:0},
+        {num:'54', code:'D2', name:'Mini', pts:0, wins:0, pods:0},
+        {num:'—',  code:'D3', name:'SAMI', pts:0, wins:0, pods:0},
       ]},
-      {name:'Mercedes-AMG GT3', cls:'gt3', engine:'Mercedes', color:'#00d2be', drivers:[
-        {num:'3',  code:'D1', name:'ZRen', pts:0, wins:0, pods:0},
+      {name:'AO Racing', cls:'gt3', engine:'Mercedes · Team Owner: Taiwanacountry123 | MERC/PEN CEO', color:'#00d2be', drivers:[
+        {num:'—',  code:'D1', name:'ZRen', pts:0, wins:0, pods:0},
         {num:'14', code:'D2', name:'Penguin', pts:0, wins:0, pods:0},
-        {num:'19', code:'D3', name:'Marvelfanboy19', pts:0, wins:0, pods:0},
+        {num:'—',  code:'D3', name:'butter', pts:0, wins:0, pods:0},
       ]},
       {name:'United Autosports', cls:'gt3', engine:'Mclaren', color:'#ff8000', drivers:[
         {num:'25', code:'D1', name:'Ogoa', pts:0, wins:0, pods:0},
-        {num:'27', code:'D2', name:'Union', pts:0, wins:0, pods:0},
+        {num:'27', code:'D2', name:'unionpacific122', pts:0, wins:0, pods:0},
         {num:'21', code:'D3', name:'kriekel', pts:0, wins:0, pods:0},
       ]},
       {name:'Akkodis ASP Team', cls:'gt3', engine:'Lexus', color:'#b91c1c', drivers:[
@@ -2507,74 +2514,71 @@ const INFO_DATA = {
         {num:'77', code:'D2', name:'fran', pts:0, wins:0, pods:0},
         {num:'14', code:'D3', name:'Daniel', pts:0, wins:0, pods:0},
       ]},
-      {name:'Federazione Italiana Automobilistica Roblox', cls:'gt3', engine:'Audi · Team Owner: XTT', color:'#f59e0b', drivers:[]},
-      {name:'AO Racing GT3', cls:'gt3', engine:'Porsche', color:'#facc15', drivers:[
-        {num:'3',  code:'D1', name:'ZRen', pts:0, wins:0, pods:0},
-        {num:'14', code:'D2', name:'Penguin', pts:0, wins:0, pods:0},
-        {num:'19', code:'D3', name:'Marvelfanboy19', pts:0, wins:0, pods:0},
+      {name:'Federazione Italiana Automobilistica Roblox', cls:'gt3', engine:'Audi · Team Owner: XTT (@EmxtXT)', color:'#f59e0b', drivers:[
+        {num:'—',  code:'D1', name:'dath (@DarthVaderEdJr)', pts:0, wins:0, pods:0},
+        {num:'34', code:'D2', name:'Whapples', pts:0, wins:0, pods:0},
+        {num:'—',  code:'D3', name:'Alonso / Jane', pts:0, wins:0, pods:0},
       ]},
 
       /* ── LMP2 ── */
-      {name:'Taiwanacountry Racing', cls:'lmp2', engine:"Team Owner: Taiwanacountry123", color:'#60a5fa', drivers:[
+      {name:'AO Racing', cls:'lmp2', engine:'Team Owner: Taiwanacountry123 | MERC/PEN CEO', color:'#facc15', drivers:[
         {num:'3',  code:'D1', name:'Neon', pts:0, wins:0, pods:0},
         {num:'14', code:'D2', name:'wavee', pts:0, wins:0, pods:0},
-        {num:'—',  code:'D3', name:'Oscar', pts:0, wins:0, pods:0},
+        {num:'—',  code:'D3', name:'HONOR3D (@Aarnavs_shadow)', pts:0, wins:0, pods:0},
       ]},
-      {name:'Vector Sports', cls:'lmp2', engine:'', color:'#f97316', drivers:[
-        {num:'93',  code:'D2', name:'Peugeot', pts:0, wins:0, pods:0},
+      {name:'Vector Sports', cls:'lmp2', engine:'Team Owner: Night_Alloy | FERRARI/LMP CEO', color:'#f97316', drivers:[
+        {num:'93',  code:'D1', name:'Peugeot', pts:0, wins:0, pods:0},
       ]},
       {name:'CLX Motorsport', cls:'lmp2', engine:'Alpine', color:'#3b82f6', drivers:[
-        {num:'—',  code:'D1', name:'nelzeyexe', pts:0, wins:0, pods:0},
+        {num:'—',  code:'D1', name:'unknown-user', pts:0, wins:0, pods:0},
         {num:'36', code:'D2', name:'Kashin', pts:0, wins:0, pods:0},
       ]},
       {name:'G-Drive Racing', cls:'lmp2', engine:'', color:'#f43f5e', drivers:[
         {num:'2',   code:'D1', name:'Lucas', pts:0, wins:0, pods:0},
-        {num:'—',   code:'D2', name:'Max', pts:0, wins:0, pods:0},
-        {num:'777', code:'D3', name:'yktomms', pts:0, wins:0, pods:0},
+        {num:'738', code:'D2', name:'Max', pts:0, wins:0, pods:0},
+        {num:'—',   code:'D3', name:'yktomms.com', pts:0, wins:0, pods:0},
       ]},
       {name:'JOTA Sport', cls:'lmp2', engine:'', color:'#6366f1', drivers:[
         {num:'46', code:'D1', name:'Nicolas', pts:0, wins:0, pods:0},
         {num:'54', code:'D2', name:'Jake', pts:0, wins:0, pods:0},
-      ]},
-      {name:'AO Racing', cls:'lmp2', engine:'', color:'#facc15', drivers:[
-        {num:'3',  code:'D1', name:'Neon', pts:0, wins:0, pods:0},
-        {num:'14', code:'D2', name:'wavee', pts:0, wins:0, pods:0},
-        {num:'—',  code:'D3', name:'Oscar', pts:0, wins:0, pods:0},
+        {num:'—',  code:'D3', name:'andres (@andres63_55)', pts:0, wins:0, pods:0},
       ]},
 
       /* ── LMH / Hypercar ── */
       {name:'Ferrari AF Corse', cls:'lmh', engine:'', color:'#dc143c', drivers:[
-        {num:'—',  code:'D1', name:'Leclerc', pts:0, wins:0, pods:0},
+        {num:'—',  code:'D1', name:'Leclerc (@Mr_ClutchGKalt)', pts:0, wins:0, pods:0},
         {num:'11', code:'D2', name:'Zodiaq', pts:0, wins:0, pods:0},
-        {num:'—',  code:'D3', name:'John', pts:0, wins:0, pods:0},
+        {num:'33', code:'D3', name:'Johntheplayer132', pts:0, wins:0, pods:0},
       ]},
       {name:'BMW M Team WRT', cls:'lmh', engine:'', color:'#e5e7eb', drivers:[
-        {num:'—', code:'D1', name:'Lord Dovante', pts:0, wins:0, pods:0},
+        {num:'—',  code:'D1', name:'Lord_Dovante (@dovante758)', pts:0, wins:0, pods:0},
+        {num:'25', code:'D2', name:'Angel', pts:0, wins:0, pods:0},
+        {num:'99', code:'D3', name:'Jeffz', pts:0, wins:0, pods:0},
       ]},
-      {name:'Aston Martin THOR Team', cls:'lmh', engine:'', color:'#22c55e', drivers:[
-        {num:'69', code:'D1', name:'Gay', pts:0, wins:0, pods:0},
+      {name:'Aston Martin THOR Team', cls:'lmh', engine:'Team Owner: Nincsen | Aston Martin Thor CEO', color:'#22c55e', drivers:[
+        {num:'—',  code:'D1', name:'FTL', pts:0, wins:0, pods:0},
         {num:'54', code:'D2', name:'642haj', pts:0, wins:0, pods:0},
         {num:'19', code:'D3', name:'Marvelfanboy19', pts:0, wins:0, pods:0},
       ]},
       {name:'Cadillac Hertz Team Jota', cls:'lmh', engine:'', color:'#6366f1', drivers:[
         {num:'99', code:'D1', name:'Jeffz', pts:0, wins:0, pods:0},
-        {num:'63', code:'D2', name:'Lightening', pts:0, wins:0, pods:0},
-        {num:'—',  code:'D3', name:'TheOneWhoAsked', pts:0, wins:0, pods:0},
+        {num:'63', code:'D2', name:'Lighteningpunch2', pts:0, wins:0, pods:0},
+        {num:'—',  code:'D3', name:'TheOneWhoAsked (@JoshConn1002)', pts:0, wins:0, pods:0},
       ]},
-      {name:'Porsche Penske Motorsport', cls:'lmh', engine:'LMDh', color:'#b91c1c', drivers:[
-        {num:'—', code:'D1', name:'elijah', pts:0, wins:0, pods:0},
-        {num:'6', code:'D2', name:'Angel', pts:0, wins:0, pods:0},
-        {num:'—', code:'D3', name:'yake', pts:0, wins:0, pods:0},
+      {name:'Porsche Penske Motorsport', cls:'lmh', engine:'LMDh · Team Owner: Taiwanacountry123 | MERC/PEN CEO', color:'#b91c1c', drivers:[
+        {num:'711', code:'D1', name:'yake', pts:0, wins:0, pods:0},
+        {num:'—',   code:'D2', name:'MARCO_WITTMAN (@Ardiano330) / EndlessVoid', pts:0, wins:0, pods:0},
+        {num:'—',   code:'D3', name:'SAMI', pts:0, wins:0, pods:0},
       ]},
       {name:'Alpine Endurance Team', cls:'lmh', engine:'LMDh', color:'#3b82f6', drivers:[
+        {num:'—', code:'D1', name:'NOVA', pts:0, wins:0, pods:0},
         {num:'—', code:'D2', name:'Gasly', pts:0, wins:0, pods:0},
         {num:'—', code:'D3', name:'vrtx', pts:0, wins:0, pods:0},
       ]},
       {name:'Team Peugeot', cls:'lmh', engine:'LMDh', color:'#94a3b8', drivers:[
-        {num:'—', code:'D2', name:'TacoMan', pts:0, wins:0, pods:0},
-        {num:'—', code:'D3', name:'vizs', pts:0, wins:0, pods:0},
+        {num:'1', code:'D1', name:'TacoMan223478', pts:0, wins:0, pods:0},
+        {num:'—', code:'D2', name:'vizs (@Rk13891)', pts:0, wins:0, pods:0},
       ]},
-      {name:'Haj AMR Thor Team', cls:'lmh', engine:'LMDh', color:'#16a34a', drivers:[]},
     ]
   },
 };
@@ -2635,6 +2639,196 @@ function navigate(page){
   if(page==='globe') initGlobe('globe-page-canvas','globe-page-tooltip','globe-page-tt-flag','globe-page-tt-name','globe-page-tt-circ','globe-page-tt-rnd');
   window.scrollTo(0,0);
 }
+
+/* ═══ GLOBAL SEARCH ═══ */
+const SERIES_LABEL_FULL = {f1:'Formula 1',f2:'Formula 2',f3:'Formula 3',end:'Endurance'};
+const SEARCH_PAGE_ICON = {home:'🏠',series:'🏁','series-f1':'🏎️','series-f1-info':'🏎️','series-f2':'🏎️','series-f2-info':'🏎️','series-f3':'🏎️','series-f3-info':'🏎️','series-end':'🔧','series-end-info':'🔧','standings-f1':'🏆','standings-f2':'🏆','standings-f3':'🏆','standings-end':'🏆',schedule:'📅',about:'ℹ️',join:'✉️',globe:'🌐'};
+const SEARCH_ICONS = {
+  driver:'<svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0 1 16 0v1"/></svg>',
+  team:'<svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+  race:'<svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>',
+  page:'<svg viewBox="0 0 24 24"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>',
+};
+
+let _searchIndex = null;
+let _searchActiveIdx = -1;
+let _searchCurrentResults = [];
+
+function buildSearchIndex(){
+  if(_searchIndex) return _searchIndex;
+  const idx = {pages:[], drivers:[], teams:[], races:[]};
+
+  // Pages (skip race-detail, it needs a specific race param)
+  Object.keys(pageTitles).forEach(p=>{
+    if(p==='race-detail') return;
+    const t = pageTitles[p];
+    idx.pages.push({type:'page', title:t[0].replace('~',' · '), sub:t[1], page:p, icon:SEARCH_PAGE_ICON[p]||'▸'});
+  });
+
+  // Drivers — dedupe by name+series across INFO_DATA
+  const seenDrivers = new Set();
+  ['f1','f2','f3','end'].forEach(s=>{
+    (INFO_DATA[s]?.teams||[]).forEach(team=>{
+      (team.drivers||[]).forEach(d=>{
+        if(!d.name) return;
+        const key = d.name.toLowerCase()+'|'+s;
+        if(seenDrivers.has(key)) return;
+        seenDrivers.add(key);
+        idx.drivers.push({type:'driver', title:d.name, sub:team.name+' · '+SERIES_LABEL_FULL[s], series:s});
+      });
+    });
+  });
+
+  // Teams — dedupe by name+series
+  const seenTeams = new Set();
+  ['f1','f2','f3','end'].forEach(s=>{
+    (INFO_DATA[s]?.teams||[]).forEach(team=>{
+      const key = team.name.toLowerCase()+'|'+s;
+      if(seenTeams.has(key)) return;
+      seenTeams.add(key);
+      idx.teams.push({type:'team', title:team.name, sub:SERIES_LABEL_FULL[s]+' · '+(team.drivers?.length||0)+' drivers', series:s});
+    });
+  });
+
+  // Races
+  RACES.forEach((r,i)=>{
+    if(r.status==='break' || !r.series || !r.series.length) return;
+    idx.races.push({type:'race', title:r.name, sub:r.circuit+' · '+r.satDate, raceIdx:i, series:r.series[0], status:r.status, flag:r.flag||''});
+  });
+
+  _searchIndex = idx;
+  return idx;
+}
+
+function openSearch(){
+  buildSearchIndex();
+  document.getElementById('searchOverlay').classList.add('open');
+  const input = document.getElementById('searchInput');
+  input.value = '';
+  runSearch('');
+  setTimeout(()=>input.focus(), 10);
+}
+
+function closeSearch(){
+  document.getElementById('searchOverlay').classList.remove('open');
+}
+
+function escapeHtml(s){
+  return String(s).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function runSearch(q){
+  const idx = buildSearchIndex();
+  q = q.trim().toLowerCase();
+  const results = document.getElementById('searchResults');
+  _searchActiveIdx = -1;
+  _searchCurrentResults = [];
+
+  if(!q){
+    results.innerHTML = renderSearchGroup('Quick Links', idx.pages.slice(0,6));
+    attachSearchItemHandlers();
+    return;
+  }
+
+  const matchDrivers = idx.drivers.filter(d=>d.title.toLowerCase().includes(q)).slice(0,6);
+  const matchTeams   = idx.teams.filter(t=>t.title.toLowerCase().includes(q)).slice(0,6);
+  const matchRaces   = idx.races.filter(r=>r.title.toLowerCase().includes(q)||r.sub.toLowerCase().includes(q)).slice(0,6);
+  const matchPages   = idx.pages.filter(p=>p.title.toLowerCase().includes(q)||p.sub.toLowerCase().includes(q)).slice(0,4);
+
+  if(!matchDrivers.length && !matchTeams.length && !matchRaces.length && !matchPages.length){
+    results.innerHTML = `<div id="searchEmpty">No results for "${escapeHtml(q)}"</div>`;
+    return;
+  }
+
+  results.innerHTML =
+    renderSearchGroup('Drivers', matchDrivers) +
+    renderSearchGroup('Teams', matchTeams) +
+    renderSearchGroup('Races', matchRaces) +
+    renderSearchGroup('Pages', matchPages);
+  attachSearchItemHandlers();
+}
+
+function renderSearchGroup(label, items){
+  if(!items.length) return '';
+  let html = `<div class="sr-group-lbl">${label}</div>`;
+  items.forEach(item=>{
+    const i = _searchCurrentResults.length;
+    _searchCurrentResults.push(item);
+    const icon = item.type==='page' ? item.icon : SEARCH_ICONS[item.type];
+    const isEmoji = item.type==='page';
+    const tag = item.type==='race' ? (item.status==='completed'?'Done':'Upcoming') : (item.series ? item.series.toUpperCase() : '');
+    html += `<div class="sr-item" data-i="${i}">
+      <div class="sr-icon">${isEmoji ? icon : icon}</div>
+      <div class="sr-main">
+        <div class="sr-title">${escapeHtml(item.title)}</div>
+        <div class="sr-sub">${escapeHtml(item.sub||'')}</div>
+      </div>
+      ${tag?`<div class="sr-tag">${tag}</div>`:''}
+    </div>`;
+  });
+  return html;
+}
+
+function attachSearchItemHandlers(){
+  document.querySelectorAll('#searchResults .sr-item').forEach(el=>{
+    el.addEventListener('click', ()=> selectSearchResult(parseInt(el.dataset.i,10)));
+    el.addEventListener('mouseenter', ()=>{
+      _searchActiveIdx = parseInt(el.dataset.i,10);
+      updateSearchActiveHighlight();
+    });
+  });
+}
+
+function updateSearchActiveHighlight(){
+  document.querySelectorAll('#searchResults .sr-item').forEach(el=>{
+    el.classList.toggle('active', parseInt(el.dataset.i,10)===_searchActiveIdx);
+  });
+  const activeEl = document.querySelector('#searchResults .sr-item.active');
+  if(activeEl) activeEl.scrollIntoView({block:'nearest'});
+}
+
+function searchKeyNav(e){
+  const n = _searchCurrentResults.length;
+  if(e.key==='Escape'){ closeSearch(); return; }
+  if(e.key==='ArrowDown'){
+    e.preventDefault();
+    if(!n) return;
+    _searchActiveIdx = (_searchActiveIdx+1)%n;
+    updateSearchActiveHighlight();
+  } else if(e.key==='ArrowUp'){
+    e.preventDefault();
+    if(!n) return;
+    _searchActiveIdx = (_searchActiveIdx-1+n)%n;
+    updateSearchActiveHighlight();
+  } else if(e.key==='Enter'){
+    e.preventDefault();
+    if(_searchActiveIdx>=0 && _searchActiveIdx<n) selectSearchResult(_searchActiveIdx);
+    else if(n) selectSearchResult(0);
+  }
+}
+
+function selectSearchResult(i){
+  const item = _searchCurrentResults[i];
+  if(!item) return;
+  closeSearch();
+  if(item.type==='page'){
+    navigate(item.page);
+  } else if(item.type==='driver'){
+    openDriverPage(item.title, item.series);
+  } else if(item.type==='team'){
+    openTeamProfile(item.title, item.series);
+  } else if(item.type==='race'){
+    openRaceDetail(item.raceIdx, item.series);
+  }
+}
+
+document.addEventListener('keydown', e=>{
+  if((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='k'){
+    e.preventDefault();
+    const ov = document.getElementById('searchOverlay');
+    if(ov.classList.contains('open')) closeSearch(); else openSearch();
+  }
+});
 
 /* ═══ RACE DETAIL ═══ */
 let currentRaceIdx = 0, currentRaceSeries = 'f1', currentEndClass = 'hyper';
@@ -3218,13 +3412,13 @@ function renderStandingsForPage(series){
   const isAdmin = editMode;
   const isEnd = series==='end';
   const cls = isEnd ? currentEndStandingsClass : null;
-  const driverEntries = data.drivers.map((d,idx)=>({d,idx})).filter(o=>!isEnd || o.d.cls===cls).sort((a,b)=>a.d.pos-b.d.pos);
+  const driverEntries = data.drivers.map((d,idx)=>({d,idx})).filter(o=>(!isEnd || o.d.cls===cls) && !o.d.hidden).sort((a,b)=>a.d.pos-b.d.pos);
   const conEntries = data.constructors.map((c,idx)=>({c,idx})).filter(o=>!isEnd || o.c.cls===cls).sort((a,b)=>a.c.pos-b.c.pos);
   document.getElementById('st-board-'+series).innerHTML = driverEntries.length===0
     ? `<div style="padding:32px;text-align:center;color:var(--text3);font-size:13px;">${isAdmin?'No drivers yet — click "+ Add Driver" below.':'No drivers have been added yet.'}</div>`
-    : driverEntries.map(({d,idx})=>`
-    <div class="st-row${d.pos===1?' leader':''} clickable" style="cursor:pointer;" data-driver-name="${d.name}" data-driver-series="${series}" onclick="(function(el,e){if(e.target.closest('button'))return;openDriverProfile(el.dataset.driverName,el.dataset.driverSeries);})(this,event)">
-      <div class="st-pos ${posC[d.pos-1]||''}">${d.pos}</div>
+    : driverEntries.map(({d,idx},displayIdx)=>{ const dispPos = displayIdx+1; return `
+    <div class="st-row${dispPos===1?' leader':''} clickable" style="cursor:pointer;" data-driver-name="${d.name}" data-driver-series="${series}" onclick="(function(el,e){if(e.target.closest('button'))return;openDriverProfile(el.dataset.driverName,el.dataset.driverSeries);})(this,event)">
+      <div class="st-pos ${posC[dispPos-1]||''}">${dispPos}</div>
       <div><div class="st-dname">${d.name}</div><div class="st-dteam">${d.team}</div></div>
       <div style="text-align:right"><div class="st-pts">${d.pts}</div><div class="st-pts-lbl">pts</div></div>
       <div class="st-form">${(d.form||[]).map(formDot).join('')}</div>
@@ -3232,7 +3426,7 @@ function renderStandingsForPage(series){
       <div class="st-stat">${d.pods}</div>
       <div class="st-stat">${d.dnf}</div>
       ${isAdmin?`<div class="st-admin-btns"><button class="st-edit-btn" onclick="openEditDriver('${series}',${idx})">✏️</button><button class="st-del-btn" onclick="deleteDriver('${series}',${idx})">🗑</button></div>`:''}
-    </div>`).join('');
+    </div>`; }).join('');
   const maxPts = conEntries[0]?.c.pts||1;
   document.getElementById('st-con-grid-'+series).innerHTML = conEntries.length===0
     ? `<div style="padding:32px;text-align:center;color:var(--text3);font-size:13px;grid-column:1/-1;">${isAdmin?'No constructors yet — click "+ Add Constructor" below.':'No constructors have been added yet.'}</div>`
@@ -4468,7 +4662,6 @@ function renderHomeStandings(){
 window.addEventListener('load',()=>{
   ['f1','f2','f3','end'].forEach(s=>renderStandingsForPage(s));
   renderCalendar('all');
-  renderHomeUpcoming();
   renderHomeStandings();
   initCountdown();
   hideSplash();
@@ -4488,7 +4681,7 @@ function hideSplash(){
 
 /* ══ RACE COUNTDOWN ══ */
 function initCountdown(){
-  const el = document.getElementById('race-countdown');
+  const el = document.getElementById('vhero-countdown-strip');
   if(!el) return;
 
   // Month name → 0-based index
@@ -4507,8 +4700,6 @@ function initCountdown(){
     return new Date(Date.UTC(2026, mon, day, 15, 0, 0)); // 11AM EDT = 15:00 UTC
   }
 
-  // Series color for the banner
-  const SERIES_COLOR = {f1:'#e8186d', f2:'#6699ff', f3:'#22d3ee', end:'#22c55e'};
   const SERIES_LABEL = {f1:'Formula 1', f2:'Formula 2', f3:'Formula 3', end:'Endurance'};
 
   let _cdTimer = null;
@@ -4518,59 +4709,47 @@ function initCountdown(){
     const now  = Date.now();
     const next = getNextRace();
     if(!next){
-      el.innerHTML = `<div class="rcd-done">No upcoming races scheduled.</div>`;
+      el.innerHTML = `<div class="vcs-label">No upcoming races scheduled</div>`;
       return;
     }
 
-    const target  = parseRaceDate(next);
     const series  = next.series[0] || 'f1';
-    const color   = SERIES_COLOR[series] || '#e8186d';
     const sLabel  = next.series.map(s => SERIES_LABEL[s] || s.toUpperCase()).join(' · ');
     const isLive  = isRaceLive(next);
+    const target  = parseRaceDate(next);
     const diff    = target ? target - now : null;
     const expired = diff !== null && diff <= 0;
 
-    // Build timer digits
-    let timerHTML = '';
+    const label = `<div class="vcs-label">Next Race — <span class="vcs-name">${next.name}</span> · ${sLabel} · Round ${next.rnd}</div>`;
+
     if(isLive || expired){
-      timerHTML = '';  // replaced by live bar below
-    } else if(diff !== null){
-      const totalSec = Math.floor(diff / 1000);
-      const d  = Math.floor(totalSec / 86400);
-      const h  = Math.floor((totalSec % 86400) / 3600);
-      const m  = Math.floor((totalSec % 3600) / 60);
-      const s  = totalSec % 60;
-      const pad = n => String(n).padStart(2,'0');
-      timerHTML = `
-        <div class="rcd-timer">
-          <div class="rcd-unit"><div class="rcd-num">${pad(d)}</div><div class="rcd-lbl">Days</div></div>
-          <div class="rcd-sep">:</div>
-          <div class="rcd-unit"><div class="rcd-num">${pad(h)}</div><div class="rcd-lbl">Hrs</div></div>
-          <div class="rcd-sep">:</div>
-          <div class="rcd-unit"><div class="rcd-num">${pad(m)}</div><div class="rcd-lbl">Min</div></div>
-          <div class="rcd-sep">:</div>
-          <div class="rcd-unit"><div class="rcd-num">${pad(s)}</div><div class="rcd-lbl">Sec</div></div>
-        </div>`;
+      el.innerHTML = `${label}<div class="vcs-live"><i></i>Session In Progress</div>`;
+      return;
     }
 
-    const liveBar  = (isLive || expired) ? `<div class="rcd-live"><div class="rcd-live-dot"></div><div class="rcd-live-text">Session In Progress</div></div>` : '';
-    const dateStr  = next.satDate && next.sunDate ? `${next.satDate} – ${next.sunDate}` : (next.satDate || '');
+    if(diff === null){
+      el.innerHTML = label;
+      return;
+    }
 
-    el.innerHTML = `
-      <div class="rcd-banner" style="background:linear-gradient(90deg,${color},${color}88);"></div>
-      <div class="rcd-body">
-        <div class="rcd-left">
-          <div class="rcd-eyebrow">Next Race · Round ${next.rnd}</div>
-          <div class="rcd-name">${next.name}</div>
-          <div class="rcd-circuit">${next.circuit}</div>
-          <div class="rcd-meta">
-            <span class="rcd-date">${dateStr}</span>
-            <span class="rcd-series-tag">${sLabel}</span>
-          </div>
-        </div>
-        ${timerHTML}
-      </div>
-      ${liveBar}`;
+    const totalSec = Math.floor(diff / 1000);
+    const d  = Math.floor(totalSec / 86400);
+    const h  = Math.floor((totalSec % 86400) / 3600);
+    const m  = Math.floor((totalSec % 3600) / 60);
+    const s  = totalSec % 60;
+    const pad = n => String(n).padStart(2,'0');
+    const timerHTML = `
+      <div class="vcs-timer">
+        <div class="vcs-unit"><span class="vcs-num">${pad(d)}</span><span class="vcs-lbl">Days</span></div>
+        <span class="vcs-colon">:</span>
+        <div class="vcs-unit"><span class="vcs-num">${pad(h)}</span><span class="vcs-lbl">Hrs</span></div>
+        <span class="vcs-colon">:</span>
+        <div class="vcs-unit"><span class="vcs-num">${pad(m)}</span><span class="vcs-lbl">Min</span></div>
+        <span class="vcs-colon">:</span>
+        <div class="vcs-unit"><span class="vcs-num">${pad(s)}</span><span class="vcs-lbl">Sec</span></div>
+      </div>`;
+
+    el.innerHTML = label + timerHTML;
   }
 
   render();
